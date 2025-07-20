@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<!-- sweetalert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Fuentes Googleapis.com -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap"
+  rel="stylesheet">
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Boostrap icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!--Estilos -->
+  <link rel="stylesheet" href="/styles/styles.css">   
+  <link rel="stylesheet" href="/styles/Formspree.css">
+  <link rel="stylesheet" href="/styles/cards-index.css">
+  <link rel="stylesheet" href="/styles/reviews.css">
+  <link rel="stylesheet" href="/styles/gallery.css">
+
+  <title>CheBonita-Inicio</title>
+  
+</head>
+
+<body>
+  <!-- Header se carga aquí -->
+  <div id="header-placeholder"></div> 
+
+  <main class="container">
+    <!-- El ancla "top" al principio de la página -->
+    <div id="top"></div>
+<!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="/img/logo.webp" alt="LOGO Che Bonita" class="hero-logo mobile-none">
+      <div class="container-hero-title">
+        <h1 class="hero-title"> Che Bonita</h1>
+        <h2 class="hero-subtitle">Fashion & Accesorios</h2>
+      </div>
+    </section>
+<!-- New coleccion -->
+    <article >
+      <div  class="collection-2025">
+        <h2 class="text-beaver">Nueva Coleccion 2025</h2>
+        <p>Presentamos un estilo femenino, con toque de elegancia e identidad argentina.</p>
+        <a href="#new" class="btn btn-custom">Descubre más</a>
+      </div>
+  </article>
+
+<hr class="separator">
+
+<!-- Features -->
+<section class="features " aria-labelledby="features-title">
+  <h2 id="features-title" class="visually-hidden">Características de nuestros servicios</h2>
+
+  <article class="feature-item border">
+    <h4>Recoger en nuestra Boutique</h4>
+    <p>Compra online y recoge tu pedido en nuestra sucursal. ¡Te esperamos!</p>
+  </article>
+
+  <article class="feature-item gift border ">
+    <h4>Embalaje exclusivo</h4>
+    <p>Presentaciones únicas</p>
+    <p>El detalle ideal para tus regalos</p>
+  </article>
+
+  <article class="feature-item border">
+    <h4>Envío y devoluciones gratis</h4>
+    <p>Envío estándar gratuito, con devoluciones y cambios en 30 días</p>
+  </article>
+</section>
+
+<hr class="separator">
+
+  <!-- Gallery y enlaces  -->
+<section class=" ">
+  <div class=" text-center">
+  <h2>DESCUBRE NUESTROS PRODUCTOS</h2>
+  <p class="intro ">Sentite Bonita!</p>
+  </div>
+  <ul class="gallery">
+    <!-- El filtrado se hara con js posteriormente -->
+    <!-- 1 -->
+    <li id="basicos" class="gallery-li">
+      <a href="#" class="category-link" data-category="básicos">
+        <h3 class="gallery-title">BASICOS</h3>
+      </a>
+    </li>       
+
+    <!-- 2 -->
+    <li id="vestidos" class="gallery-li">
+      <a href="#" class="category-link" data-category="vestidos">
+        <h3 class="gallery-title">VESTIDOS</h3>
+      </a>
+    </li>
+    <!-- 3 -->
+    <li id="sale" class="gallery-li">
+      <a href="#" class="category-link" data-category="ediciones-especiales">
+        <h3 class="gallery-title">EDICIONES ESPECIALES</h3>
+      </a>
+    </li>
+    <!-- 4 -->
+    <li id="carteras" class="gallery-li">
+      <ahref="#" class="category-link" data-category="carteras">
+        <h3 class="gallery-title">CARTERAS</h3>
+      </a>
+    </li>
+    <!-- 5 -->
+    <li id="new" class="gallery-li">
+      <a href="#" class="category-link" data-category="all">
+        <h3 class="gallery-title">NUEVAS Colecciones</h3>
+      </a>
+    </li>
+    <!-- 6 -->
+    <li id="joyeria" class="gallery-li">
+      <a href="#" class="category-link" data-category="joyería">
+        <h3 class="gallery-title">JOYERIA</h3>
+      </a>
+    </li>
+    <!-- 7 -->
+    <li class="gallery-li">
+      <a href="/web/tienda.html">
+        <h3 class="gallery-title">TIENDA ONLINE</h3>
+      </a>
+    </li>
+    <!-- 8 -->
+    <li id="relojes" class="gallery-li">
+      <a href="#" class="category-link" data-category="relojes">
+        <h3 class="gallery-title">RELOJES</h3>
+      </a>
+    </li>
+    <!-- 9 -->
+    <li id="zapatos" class="gallery-li">
+      <a href="#" class="category-link" data-category="zapatos">
+        <h3 class="gallery-title">ZAPATOS</h3>
+      </a>
+    </li>
+    <!-- 10 -->
+    <li class="gallery-li">
+      <a href="#" class="category-link" data-category="gift-cards"">
+        <h3 class="gallery-title">GIFT CARD</h3>
+      </a>
+    </li>
+    <!-- 11 -->
+    <li class="gallery-li mobile-none">
+      <a href="#" class="category-link" data-category="carteras">
+        <h3 class="gallery-title">CARTERAS</h3>
+      </a>
+    </li>
+    <!-- 12  No la expande para conservar el diseno-->
+    <li class="gallery-li  mobile-none">
+      <a href="#" class="category-link" data-category="básicos">
+        <h3 class="gallery-title">BASICOS</h3>
+      </a>
+    </li>
+      <!-- 13 -->
+      <li class=" gallery-li mobile-none">
+        <!-- img fondo / relleno-->
+      </li>
+    
+  </ul>
+</section>
+ 
+<hr class="separator">
+
+  <section class="banner-section">
+    <div class="banner-overlay"></div>
+      <figure>
+        <img class="banner" src="/img/foto-sale.webp" alt="Precios especiales sale">
+      </figure>
+      
+        <div class="banner-text">
+          <h3><b>¡No te pierdas nuestras ofertas!</b></h3>
+          <p>Explora nuestra tienda online y descubre precios especiales en una amplia gama de productos.</p>
+          <a href="/web/tienda.html" target="_blank" class="btn btn-custom">Ir a la tienda</a>
+        </div>
+      </div>
+  </section>
+  
+<hr class="separator">
+
+  <!-- Sección de productos con Flexbox -->
+  <section class="product-cards " aria-labelledby="products-title">
+    <h2 id="products-title" class="visually-hidden">Catálogo de productos</h2>
+  
+    <ul class="product-list ">
+      <!-- Se reemplaza productos hardcodeados por dinamicos-->
+      </ul>
+    </article>
+    </div>
+    </u>
+  </section>
+
+<hr class="separator">
+
+  <!-- Sección de Reseñas -->
+  <section class="reviews-section" aria-labelledby="reviews-title">
+    <h2 id="reviews-title">"Opiniones que inspiran"</h2>
+  
+    <div class="reviews-grid">
+      <!-- Reseña 1 -->
+      <div class="review-card">
+        <h3 class="product-name">Cartera Julieta</h3>
+        <div class="star-rating">
+          ★★★★☆
+        </div>
+        <p class="review-text">"Hermoso bolso, ideal para el día a día. La piel es suave y los acabados impecables. Superó
+          mis expectativas."</p>
+        <div class="reviewer">- Valentina R.</div>
+      </div>
+  
+      <!-- Reseña 2 -->
+      <div class="review-card">
+        <h3 class="product-name">Anteojos Caramel Prada</h3>
+        <div class="star-rating">
+          ★★★★★
+        </div>
+        <p class="review-text">"Los anteojos son espectaculares, tienen un diseño que realza cualquier look. ¡Muy
+          recomendados para los amantes de la moda!"</p>
+        <div class="reviewer">- Lucas M.</div>
+      </div>
+  
+      <!-- Reseña 3 -->
+      <div class="review-card">
+        <h3 class="product-name">Mocasines de mujer</h3>
+        <div class="star-rating">
+          ★★★★☆
+        </div>
+        <p class="review-text">"Un calzado cómodo y elegante, perfecto para cualquier ocasión. Me encantan los detalles y
+          el acabado."</p>
+        <div class="reviewer">- Florencia A.</div>
+      </div>
+  
+      <!-- Reseña 4 -->
+      <div class="review-card">
+        <h3 class="product-name">Reloj Zara Woman</h3>
+        <div class="star-rating">
+          ★★★☆☆
+        </div>
+        <p class="review-text">"Diseño sencillo y sofisticado. Este reloj es mi favorito para cualquier ocasión. ¡Me
+          encanta!"</p>
+        <div class="reviewer">- Carla T.</div>
+      </div>
+  
+      <!-- Reseña 5 -->
+      <div class="review-card">
+        <h3 class="product-name">Campera de Jean Zara Woman</h3>
+        <div class="star-rating">
+          ★★★★★
+        </div>
+        <p class="review-text">"Excelente calidad y perfecto para cualquier temporada. Es cómoda y combina con todo. ¡Muy
+          satisfecho con la compra!"</p>
+        <div class="reviewer">- Mariano P.</div>
+      </div>
+      <!-- Reseña 6 -->
+      <div class="review-card">
+        <h3 class="product-name">Gift Card Che Bonita</h3>
+        <div class="star-rating">
+          ★★★★★
+        </div>
+        <p class="review-text">"Che Bonita es la mejor tienda para encontrar productos interesantes. Su selección de marcas es
+          impecable y siempre tienen las últimas tendencias. La gift card es una excelente opción para regalar, ¡permite
+          elegir lo que uno realmente quiere! Muy recomendable."</p>
+        <div class="reviewer">- Sol R.</div>
+      </div>
+    </div>
+  </section>
+
+
+<hr class="separator">
+    <!-- GiftCard Section -->
+    <section id="gift-card" class="gift-card-section">
+      <!-- Texto de la Gift Card -->
+      <div class="gift-card-text">
+        <h2>Regala la Libertad de Elegir con Nuestras Gift Cards</h2>
+        <p>¿No sabes qué regalar? Nuestras Gift Cards son la opción ideal para sorprender a quienes más quieres. Con ellas,
+          tus amigos y familiares pueden elegir entre una gran variedad de productos en nuestra tienda, encontrando el
+          detalle
+          perfecto que más les guste.</p>
+        <h3>Fácil de Usar</h3>
+        <p>Elige el monto de tu gift card y envíala directamente al destinatario. ¡Es rápida, práctica y siempre bienvenida!
+        </p>
+        <h3>Flexible y Personalizable</h3>
+        <p>Nuestras gift cards pueden usarse en cualquier momento y para cualquier producto. Solo necesitas seleccionar el
+          valor y nosotros nos encargamos del resto.</p>
+        <h3>Ideal para Toda Ocasión</h3>
+        <p>Cumpleaños, aniversarios, celebraciones especiales o simplemente porque sí. Con una gift card, siempre acertarás.
+        </p>
+        <p>Regala la libertad de escoger lo que realmente desean. ¡Haz feliz a alguien especial hoy con una de nuestras gift
+          cards!</p>
+        <!-- Botón de comprar -->
+        <a href="/web/tienda.html?categoria=gift-card" class="btn-comprar">Comprar Gift Card</a>
+      </div>
+    
+      <!-- Imágenes de la Gift Card -->
+      <div class="gift-card-images">
+        <img src="https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/che-giftcard_zaf1yy.png" alt="Gift Card">
+        <img class="mobile-none"   src="/img/foto1.PNG" alt="Gift Card foto zapatillas">
+
+      </div>
+    </section>
+
+   
+
+    <section id="newsletter" class="Formspree">
+      <h2 class="border-light">Newsletter</h2>
+      <p>¡Inscríbete para recibir nuestras últimas novedades y tendencias cada semana!</p>
+      <p>Selecciona "Suscribirse" para confirmar tus preferencias o "Darse de baja" para eliminarte de la lista.</p>
+    
+      <form class="container" action="https://formspree.io/f/xqakplkv" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
+    
+        <label for="email">Tu email:</label>
+        <input type="email" id="email" name="email" required placeholder="Escribe tu email">
+    
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="privacyPolicy" required>
+          <label class="form-check-label" for="privacyPolicy">
+            He leído y entiendo la <a href="#" target="_blank"><i>Política de Privacidad y Cookies</i></a> y acepto recibir
+            comunicaciones comerciales personalizadas por correo electrónico.
+          </label>
+        </div>
+    
+        <button class="btn btn-custom-Light m-3" type="submit">Suscribirse</button>
+      </form>
+    
+      <p>Si deseas darte de baja, puedes hacerlo en cualquier momento a través del enlace de "Darse de baja" en nuestros
+        correos electrónicos.</p>
+    </section>
+
+<!-- Botón para subir hacia arriba -->
+<a href="#top" class="btn-subir" id="btnSubir">
+  ↑ Subir
+</a>
+  </main>
+
+  <div id="footer-placeholder"></div> <!-- Footer se carga aquí -->
+
+ <!-- Bootstrap JS + Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
+    
+    <script type="module" src="/js/loadHeaderFooter.js"></script>
+    <script type="module" src="/js/fetchProducts.js"></script>
+    <script type="module" src="/js/cart.js" defer></script>
+   
+    
+</body>
+
+</html>

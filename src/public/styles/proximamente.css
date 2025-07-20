@@ -1,0 +1,61 @@
+/* Sección principal de "Próximamente" */
+.coming-soon {
+  display: flex;          
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center; 
+  text-align: center;     
+  padding: 1em 0;   
+     
+}
+
+.coming-soon h2 {
+  font-family: var(--font-script);
+  font-size: 3em;
+  color: var(--white);
+  margin-bottom: 1em;  
+   display: inline-block;
+}
+
+.coming-soon p {
+  font-family: var(--font-sans-serif);
+  font-size: 1.8em;
+  background-color: var(--dark-green);
+  color: var(--white);
+  display: inline-block;
+  margin-bottom: 1em;  
+  
+}
+
+/* Botón "Notificarme" */
+.notify-me {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.notify-me .btn-custom{
+  font-size: 1.5em;
+  padding: 10px 30px;
+  margin:3em;
+  border-radius: 2%;;
+}
+
+
+.coming-soon {
+  background-image: url('../img/perchero.webp'); 
+  background-size: cover;
+  background-position: center;   
+  padding: 50px 20px;
+  text-align: center;
+  height: 50vh;
+  margin-top: 50px;
+}
+
+
+.highlighted-text {
+  background-color: var(--dark-green);
+  color: var(--white);  
+  padding: 5px 10px;
+  margin:0.5em;
+ }

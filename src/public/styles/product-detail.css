@@ -1,0 +1,176 @@
+
+
+body {
+  font-family: var(--font-sans-serif), sans-serif;
+  background-color: var(--white);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--smoky-black);
+  font-family: var(--font-script), cursive;
+}
+
+/* Contenedor principal */
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr; /* Sidebar, Imagen principal, Detalles */
+  gap: var(--gutter);
+  align-items: start;
+  margin: 40px 0;
+}
+
+/* Contenedor de thumbnails */
+#thumbnail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 20px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid var(--smoky-black-2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  border-color: var(--light-gold);
+}
+
+/* Imagen principal */
+#main-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+#product-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  border: solid 2px var(--smoky-black-2);
+  object-fit: contain;
+}
+
+/* Detalles del producto */
+#product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-green);
+}
+
+#product-description {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+#product-price {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--dark-green);
+}
+
+#product-stock {
+  font-size: 1.1rem;
+  color: var(--beaver);
+}
+
+/* Opciones Gift Card */
+#gift-card-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+#gift-card-value {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
+  background-color: var(--white);
+  transition: border-color 0.3s ease;
+}
+
+#gift-card-value:hover {
+  border-color: var(--light-gold);
+}
+
+#custom-value {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
+  background-color: var(--white);
+}
+
+#selected-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-green);
+}
+
+/* Botón Añadir al carrito */
+#add-to-cart {
+  background-color: var(--light-gold);
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+#add-to-cart:hover {
+  background-color: var(--smoky-black-2);
+  color: var(--white);
+}
+
+#product-loading-spinner {
+  display: none; /* Oculto por defecto */
+}
+
+body.loading #product-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.loading .product-detail-container {
+  display: none;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-detail-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #product-title {
+    font-size: 1.75rem;
+  }
+
+  #product-price {
+    font-size: 1.25rem;
+  }
+
+  #add-to-cart {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}

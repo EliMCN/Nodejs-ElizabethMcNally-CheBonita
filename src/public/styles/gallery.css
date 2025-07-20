@@ -1,0 +1,105 @@
+/*  css correspondiente a galeria de imagenes */
+
+/* Importar fuente */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,700');
+
+
+/* Galería */
+.gallery {    
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-auto-rows: minmax(20vh, 10em);  
+    grid-template-rows: repeat(auto-fill, minmax(20em, 1fr));  
+}
+
+/* Elementos de la lista */
+.gallery-li {
+    width: 100%;
+    height:100%;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 3;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    
+    }
+
+.gallery-li:hover .gallery-title,
+.gallery-li:focus .gallery-title {
+    background-color: var(--silver);
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transform: translateY(0);
+}
+
+.gallery-title {    
+    width: 100%;
+    background-color: hsla(220, 90%, 15%, 0.5);
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    transform: translateY(10px);
+    transition: padding 0.3s ease-in-out;    
+}
+
+/* Título GALLERY */
+.gallery li h3 {
+    font-size: calc(1rem + 1vw);
+    font-weight: 300;
+    margin: 1.5rem 0 0;
+    text-align: center;
+}
+
+/* Texto de introducción */
+.intro {
+    text-align: center;
+    background-color: hsla(220, 90%, 15%, 0.5);
+    color:var(--white);
+    font-size: calc(1rem + 1vw);
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+/* Imágenes de fondo para cada elemento de la lista */
+.gallery li:nth-of-type(1) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/anteojos_wfym5p.webp'); }
+.gallery li:nth-of-type(2) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1752760340/blanco-celeste_zqdamu.jpg'); }
+.gallery li:nth-of-type(3) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1752757729/logo_gc4vs9.webp'); }
+.gallery li:nth-of-type(4) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/cartera_mf8ljq.webp'); }
+.gallery li:nth-of-type(5) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/jean_ajmufo.webp'); }
+.gallery li:nth-of-type(6) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/globaldsio-it-solution-OWExkbShXIE-unsplash_eg2ifj.jpg'); }
+.gallery li:nth-of-type(10) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1752760351/mujer-alreves_i7qu2z.webp'); }
+.gallery li:nth-of-type(8) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/watch_fhpgey.jpg'); }
+.gallery li:nth-of-type(9) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/zapato-dorado_xg1pmm.webp'); }
+.gallery li:nth-of-type(7) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1752757729/logo_gc4vs9.webp'); }
+.gallery li:nth-of-type(11) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/cartera_mf8ljq.webp'); }
+.gallery li:nth-of-type(12) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/jay-soundo-mgZSrLLZtzU-unsplash_jtcuqt.jpg'); }
+.gallery li:nth-of-type(13) { background-image: url('https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/che-giftcard_zaf1yy.png'); }
+
+
+
+/* Cada segundo li abarca dos filas, para variar el diseño visualmente.*/
+
+.gallery li:nth-of-type(2n +2) {
+        grid-row: span 2;
+    } 
+
+li img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 576px) {
+    li.mobile-none {
+        display: none ;
+    }
+}
+
+

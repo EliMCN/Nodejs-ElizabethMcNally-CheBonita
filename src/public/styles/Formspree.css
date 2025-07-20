@@ -1,0 +1,94 @@
+/* Estilo de formulario para Formspree */
+.Formspree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+  background-color: var(--timberwolf);
+  border: 1px solid var(--silver);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2em auto;
+}
+
+.Formspree h2 {
+  color: var(--smoky-black);  
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.Formspree p {
+  color: var(--dark-green);
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+.Formspree form {
+  width: 100%;
+}
+
+.Formspree label {
+  color: var(--smoky-black-2);
+  font-weight: bold;
+  display: block;
+  margin: 0.5em 0 0.2em;
+  font-size: 1.1em;
+}
+
+.Formspree input[type="text"],
+.Formspree input[type="email"] {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1em;
+  color: var(--smoky-black);
+  background-color: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.Formspree input[type="text"]:focus,
+.Formspree input[type="email"]:focus {
+  border-color: var(--beaver);
+  outline: none;
+}
+
+.Formspree button[type="submit"] {
+  background-color: var(--beaver);
+  color: var(--white);
+  font-size: 1.2em;
+  font-family: var(--font-script);
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Formspree button[type="submit"]:hover {
+  background-color: var(--smoky-black);
+  color: var(--white);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .Formspree h2 {
+    font-size: 2em;
+  }
+  .Formspree p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 576px) {
+  .Formspree {
+    padding: 1em;
+  }
+  .Formspree button[type="submit"] {
+    font-size: 1em;
+    padding: 0.6em 1.2em;
+  }
+}

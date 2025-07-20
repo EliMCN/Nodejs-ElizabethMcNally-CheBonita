@@ -1,0 +1,86 @@
+/* src/public/styles/dashboard.styles.css */
+
+/* Estilos generales para el cuerpo del dashboard */
+body.dashboard-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4; /* Un fondo más neutro para el dashboard */
+  font-family: var(--font-sans-serif);
+}
+
+/* Hacemos que el main ocupe el espacio sobrante para que el footer quede abajo */
+body.dashboard-body main {
+  flex: 1;
+}
+
+/* ================================================================ */
+/* ESTILOS ESPECÍFICOS PARA EL HEADER DEL DASHBOARD */
+/* ================================================================ */
+.dashboard-main-header {
+  background: linear-gradient(180deg, var(--smoky-black), var(--beaver));
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 20px; /* Espacio entre los enlaces */
+  align-items: center;
+}
+
+.dashboard-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Estilos para las tarjetas del dashboard */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del formulario de perfil */
+.profile-form-container {
+  padding: 1rem;
+  font-weight: bold;
+  text-align: center;
+  max-width: 900px; /* Un ancho máximo para el contenedor principal del perfil */
+  margin: auto;
+}
+
+.profile-form-container h4,
+.profile-form-container h5 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--dark-green);
+}
+
+/* Estilos para el formulario de autenticación/cambio de contraseña */
+.auth-form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Gráficos de Chart.js */
+canvas {
+  max-width: 100%;
+  margin-top: 20px;
+}

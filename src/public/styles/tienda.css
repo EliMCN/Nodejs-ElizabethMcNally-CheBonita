@@ -1,0 +1,219 @@
+/* En este css incluyo el layout de la tienda y css para cards */
+
+/* Layout principal */
+.store-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+/* Sección principal de la tienda */
+.store-main {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* <!-- Navegación con anclajes sin js-->*/
+.store-nav {
+    width: 300px; /* Ancho fijo para el aside */
+    background-color: var(--white);
+    padding: 0.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align:center;
+}
+
+.store-nav h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 10px;    
+}
+
+.category-list a {
+    display: block; 
+    color: var(--dark-green);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 20px;    
+    text-align: center; 
+    line-height: 1.5;
+}
+
+.category-list a:hover {
+    color:var(--discount-color);
+}
+.category-list a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Ajustar tamaño máximo de los logos */
+.carousel-item img {
+    max-width: 80px;
+    margin: auto;
+}
+
+
+
+
+/* Estilo general para las tarjetas de productos en Tienda.html */
+/* El css base de card esta en index html , aqui se amplia la card con mas info*/
+.price {
+  margin-bottom: 20px;
+}
+
+.original-price {
+  text-decoration: line-through;/*tachado*/
+  color: var(--silver);
+  font-size: 1.1rem;
+}
+
+.discount-price {
+  font-size: 1.25rem;
+  color: var(--discount-color);
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.discount-btn {
+  background-color: var(--beaver);
+  color: var(--white);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.discount-btn:hover {
+  background-color: var(--discount-color);
+}
+
+.stock-status {
+  font-size: 0.9rem;
+  color: var(--smoky-black-2);
+}
+
+
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .store-nav {
+        display: none; /* Oculta el nav de categorias en pantallas pequeñas */
+    }
+}
+
+
+/* Carrousel en Tienda.htnl*/
+
+/* Carrusel de Logos */
+#logoCarousel .carousel-inner {
+  text-align: center; 
+}
+
+#logoCarousel .carousel-item {
+  padding: 0.5em; 
+}
+
+#logoCarousel .carousel-item img {
+  max-width: 8em; 
+  height: auto; 
+  transition: transform 0.3s ease; /* Animación para un efecto de zoom al pasar el mouse */
+border-radius: 50%; 
+  object-fit: cover; 
+   
+}
+
+/* Efecto de zoom al pasar el mouse sobre los logos */
+#logoCarousel .carousel-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo para los controles de carrusel */
+.carousel-control-prev, .carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 50%; /* Bordes redondeados */
+  width: 3em;
+  height: 3em;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  position: absolute; /* Posiciona los controles en los bordes */
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Centrado vertical ajustado */
+}
+.carousel-control-prev {
+  left: 0.5em; 
+}
+
+.carousel-control-next {
+  right: 0.5em;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color:var(--white); /* Iconos de los controles en blanco */
+  width: 1em; 
+  height: 1em;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #logoCarousel .carousel-item img {
+    width: 5em;
+  height: auto; 
+  }
+  .carousel-control-prev, .carousel-control-next {
+    width: 2.5em; 
+    height: 2.5em; 
+  }
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 1.2em; 
+    height: 1.2em;
+  }
+}
+
+@media (max-width: 576px) {
+  #logoCarousel .carousel-item img {
+   width: 3em;
+  height: auto;
+
+  }
+.carousel-control-prev, .carousel-control-next {
+    width: 2em; 
+    height: 2em; 
+  }
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 1em; 
+    height: 1em; 
+   }
+
+}
+/******Paginacion  */
+.load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:var(--beaver);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.load-more:hover {
+    background-color: var(--smoky-black-2);
+}

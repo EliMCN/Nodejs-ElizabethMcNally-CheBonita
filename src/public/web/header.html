@@ -1,0 +1,71 @@
+<header class="bg-light container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <div class="container">
+      <!-- Logo y Botón de Hamburguesa -->
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="/img/logo.webp" class="logo" alt="LOGO Che Bonita">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú colapsable y Barra de Búsqueda -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tienda.html">Tienda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Precios especiales
+            </a>       
+            
+            <ul class="dropdown-menu">
+               
+            <li><a href="#" class="dropdown-item category-link" data-category="ediciones-especiales">Ediciones especiales</a></li>
+            <li><a href="#" class="dropdown-item category-link" data-category="básicos"> Básicos</a></li>
+            <li><a href="#" class="dropdown-item category-link" data-category="carteras">Carteras</a></li>
+            <li><a href="#" class="dropdown-item category-link" data-category="vestidos">Vestidos</a></li>
+            <li><a href="#" class="dropdown-item category-link" data-category="joyería">Joyería</a></li>
+            <li><a href="#" class="dropdown-item category-link" data-category="zapatos">Zapatos</a></li>
+            <li><a href="#" class="dropdown-item category-link" data-category="relojes">Relojes</a></li>
+                 <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#" data-category="gift-cards">GIFT CARD</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/proximamente.html">NEW Collection</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Iconos a la derecha (unificados para móvil y escritorio) -->
+      <div class="d-flex align-items-center ms-lg-3">
+        <!-- Botón de Búsqueda -->
+        <a href="#" class="nav-link" id="search-toggle-btn" aria-label="Buscar">
+          <i class="bi bi-search fs-5"></i>
+        </a>
+        <!-- Enlaces de Usuario (Login/Perfil) -->
+        <div id="userLinks" class="nav-item dropdown mx-2"></div>
+        <!-- Carrito -->
+        <a class="nav-link" href="/cart.html" aria-label="Carrito">
+          <i class="bi bi-bag fs-5"></i>
+          <span id="cartCount" class="cartCount d-none"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barra de búsqueda (fuera de la nav, se mostrará como overlay) -->
+  <div id="search-overlay" class="search-overlay">
+    <form id="search-form" class="d-flex container" role="search">
+      <input id="search-input" class="form-control me-2" type="search" placeholder="¿Qué estás buscando..." aria-label="Buscar">
+      <button class="btn btn-light" type="submit">Buscar</button>
+    </form>
+  </div>
+</header>

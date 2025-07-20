@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis Compras | Che Bonita</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="stylesheet" href="/styles/dashboard.styles.css" />
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="dashboard-body">
+  <!-- Header dinámico -->
+  <div id="dashboard-header"></div>
+
+  <main class="container my-5 text-center">
+    <div class="card p-5">
+      <h1 class="mb-4">Mis Compras</h1>
+      <i class="bi bi-bag-check-fill" style="font-size: 4rem; color: var(--beaver);"></i>
+      <p class="lead mt-4">
+        Aquí verás el historial de tus compras una vez que realices tu primer pedido.
+      </p>
+      <a href="/web/tienda.html" class="btn btn-primary mt-3 mx-auto" style="max-width: 200px;">¡Empezar a comprar!</a>
+    </div>
+  </main>
+
+  <!-- Footer dinámico -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/dashboardLoadHeaderFooter.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+{
+  "products": [
+    {
+      "title": "Cartera Julieta",
+      "description": "Bolso icónico de suave piel y delicadeza, perfecto para un look moderno.",
+      "price": 135000,
+      "discountPercentage": 20,
+      "rating": 4.8,
+      "stock": 76,
+      "brand": "Julieta",
+      "category": "carteras",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/cartera_mf8ljq.webp",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/cartera_mf8ljq.webp",
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/mrtiger-PN19hB7_lHE-unsplash_idhsfp.jpg"
+      ],
+      "specialEdition": true,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Anteojos Caramel Prada",
+      "description": "Modelo elegante de la firma Prada que garantiza estilo y calidad.",
+      "price": 79500,
+      "discountPercentage": 20,
+      "rating": 4.5,
+      "stock": 45,
+      "brand": "Prada",
+      "category": "ediciones-especiales",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/anteojos_wfym5p.webp",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/anteojos_wfym5p.webp",
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/jay-soundo-mgZSrLLZtzU-unsplash_jtcuqt.jpg"
+      ],
+      "specialEdition": true,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Mocasines de mujer",
+      "description": "Zapatos de alta calidad con acabado suave y brillante.",
+      "price": 112000,
+      "discountPercentage": 10,
+      "rating": 4.7,
+      "stock": 35,
+      "brand": "Exclusivo",
+      "category": "zapatos",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/zapato-dorado_xg1pmm.webp",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/zapato-dorado_xg1pmm.webp",
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815359/apostolos-vamvouras-_pdbqMcNWus-unsplash_jzgvnh.jpg"
+      ],
+      "specialEdition": true,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Reloj Zara woman",
+      "description": "Reloj minimalista ideal para un look sofisticado.",
+      "price": 158000,
+      "discountPercentage": 10,
+      "rating": 4.6,
+      "stock": 60,
+      "brand": "Zara",
+      "category": "relojes",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/watch_fhpgey.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/watch_fhpgey.jpg",
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815356/deena-englard-abThP5SERao-unsplash_of3j0x.jpg"
+      ],
+      "specialEdition": true,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Campera de Jean Zara woman",
+      "description": "Denim de alta calidad, resistente y cómodo.",
+      "price": 94500,
+      "discountPercentage": 15,
+      "rating": 4.4,
+      "stock": 50,
+      "brand": "Zara",
+      "category": "vestidos",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/jean_ajmufo.webp",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/jean_ajmufo.webp",
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/bundo-kim-zkHv9pvrE9U-unsplash_mcxfig.jpg"
+      ],
+      "specialEdition": true,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Gift Card",
+      "description": "Enter a custom value for the perfect gift..",
+      "price": 0,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 99999,
+      "brand": "Che Bonita",
+      "category": "gift-cards",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/che-giftcard_zaf1yy.png",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751808470/che-giftcard_zaf1yy.png"
+      ],
+      "specialEdition": false,
+      "isGiftCard": true,
+      "customizable": true
+    },
+    {
+      "title": "Elegant Leather Handbag",
+      "description": "Classic black leather handbag for every occasion.",
+      "price": 125000,
+      "brand": "Che Bonita",
+      "category": "carteras",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/mrtiger-PN19hB7_lHE-unsplash_idhsfp.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/mrtiger-PN19hB7_lHE-unsplash_idhsfp.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Mini Crossbody Bag",
+      "description": "Compact and versatile mini bag with adjustable strap.",
+      "price": 84500,
+      "brand": "ModaChic",
+      "category": "carteras",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/kiki-f4fyLXjHVHQ-unsplash_m0wdeu.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/kiki-f4fyLXjHVHQ-unsplash_m0wdeu.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Tote Shopper Bag",
+      "description": "Spacious tote bag ideal for shopping or travel.",
+      "price": 96500,
+      "brand": "UrbanStyle",
+      "category": "carteras",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/marco-palumbo-9CZTCStMEGo-unsplash_pit9c9.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/marco-palumbo-9CZTCStMEGo-unsplash_pit9c9.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Soft Beige Satchel",
+      "description": "Neutral-toned satchel with interior pockets.",
+      "price": 112000,
+      "brand": "EstiloClaro",
+      "category": "carteras",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/urban-minimals-z_iNMJYxCBs-unsplash_k0sqht.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815362/urban-minimals-z_iNMJYxCBs-unsplash_k0sqht.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    }
+    ,
+    {
+      "title": "Bold Red Handbag",
+      "description": "Statement handbag in vibrant red leather.",
+      "price": 134000,
+      "brand": "FemmeForte",
+      "category": "carteras",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/fashion-needles-8mm_11iGqI8-unsplash_nahle7.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/fashion-needles-8mm_11iGqI8-unsplash_nahle7.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Golden Heeled Sandals",
+      "description": "Stylish golden heels perfect for a night out.",
+      "price": 87500,
+      "brand": "LuzDorada",
+      "category": "zapatos",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815359/apostolos-vamvouras-_pdbqMcNWus-unsplash_jzgvnh.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815359/apostolos-vamvouras-_pdbqMcNWus-unsplash_jzgvnh.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Black Ankle Boots",
+      "description": "Classic ankle boots in smooth black finish.",
+      "price": 102000,
+      "brand": "UrbanStyle",
+      "category": "zapatos",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815358/apostolos-vamvouras-nk8nBcFZEeE-unsplash_gdi0r5.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815358/apostolos-vamvouras-nk8nBcFZEeE-unsplash_gdi0r5.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Casual White Sneakers",
+      "description": "Minimalist sneakers with extra comfort.",
+      "price": 72500,
+      "brand": "WalkChic",
+      "category": "zapatos",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815358/ashkan-forouzani-CjvlhrWU0o0-unsplash_ct96nn.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815358/ashkan-forouzani-CjvlhrWU0o0-unsplash_ct96nn.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Leather Loafers",
+      "description": "Elegant loafers with glossy finish.",
+      "price": 99000,
+      "brand": "StepElite",
+      "category": "zapatos",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815361/yulia_dubyna-kVHCaI71B9M-unsplash_tpndzk.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815361/yulia_dubyna-kVHCaI71B9M-unsplash_tpndzk.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    }
+    ,
+    {
+      "title": "Beige Ballet Flats",
+      "description": "Soft and stylish flats for everyday comfort.",
+      "price": 69500,
+      "brand": "ComfyStep",
+      "category": "zapatos",
+      "stock": 50,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815356/tatiana-zhukova-5ShiNH5si6I-unsplash_jxquda.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815356/tatiana-zhukova-5ShiNH5si6I-unsplash_jxquda.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false
+    },
+    {
+      "title": "Rose Gold Watch",
+      "description": "Stylish rose gold watch with mesh strap.",
+      "price": 16999,
+      "category": "relojes",
+      "brand": "Timeless",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815356/deena-englard-abThP5SERao-unsplash_of3j0x.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815356/deena-englard-abThP5SERao-unsplash_of3j0x.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Classic Leather Watch",
+      "description": "Brown leather strap with silver dial.",
+      "price": 12999,
+      "category": "relojes",
+      "brand": "VintageStyle",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815355/lola-rose-Dd1V7M_eAXQ-unsplash_rwldzw.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815355/lola-rose-Dd1V7M_eAXQ-unsplash_rwldzw.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Elegant Square Watch",
+      "description": "Square face with gold-plated strap.",
+      "price": 18999,
+      "category": "relojes",
+      "brand": "Eleganza",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815353/king-buwa-lkSCA67uj0g-unsplash_okd3vv.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815353/king-buwa-lkSCA67uj0g-unsplash_okd3vv.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Minimalist Black Watch",
+      "description": "Sleek black watch with modern design.",
+      "price": 14999,
+      "category": "relojes",
+      "brand": "ModernLook",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815349/marios-gkortsilas-4eViEoxOzX0-unsplash_vqf0q5.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815349/marios-gkortsilas-4eViEoxOzX0-unsplash_vqf0q5.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Dual Dial Watch",
+      "description": "Dual time zone functionality in a stylish case.",
+      "price": 19999,
+      "category": "relojes",
+      "brand": "JetSet",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815349/francois-hurtaud-0KXTf30OKD8-unsplash_emgaod.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815349/francois-hurtaud-0KXTf30OKD8-unsplash_emgaod.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Crystal Stud Earrings",
+      "description": "Elegant crystal studs for everyday elegance.",
+      "price": 3999,
+      "category": "joyería",
+      "brand": "CrystalLux",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815349/parisa-safaei-RIqNLZ_h2X8-unsplash_bgsnp2.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815349/parisa-safaei-RIqNLZ_h2X8-unsplash_bgsnp2.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Pearl Drop Necklace",
+      "description": "Graceful pearl drop necklace with silver chain.",
+      "price": 8999,
+      "category": "joyería",
+      "brand": "PearlElegance",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/paige-johnson-QMBar9xvhMU-unsplash_xjqpdq.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/paige-johnson-QMBar9xvhMU-unsplash_xjqpdq.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Gold Bangle Set",
+      "description": "Set of three gold-tone bangles.",
+      "price": 11999,
+      "category": "joyería",
+      "brand": "GoldenEra",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/anastasia-anastasia-7kIGwZkuiZ8-unsplash_tzvuzy.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/anastasia-anastasia-7kIGwZkuiZ8-unsplash_tzvuzy.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Silver Charm Bracelet",
+      "description": "Delicate bracelet with star and heart charms.",
+      "price": 7499,
+      "category": "joyería",
+      "brand": "Charmy",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/oscar-ramirez--4Zy54Jptxw-unsplash_zwkoop.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/oscar-ramirez--4Zy54Jptxw-unsplash_zwkoop.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Statement Ring",
+      "description": "Large gemstone ring for a bold look.",
+      "price": 5999,
+      "category": "joyería",
+      "brand": "BoldGems",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/globaldsio-it-solution-OWExkbShXIE-unsplash_eg2ifj.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815348/globaldsio-it-solution-OWExkbShXIE-unsplash_eg2ifj.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Limited Velvet Clutch",
+      "description": "Plush velvet clutch with golden accents.",
+      "price": 24999,
+      "category": "ediciones-especiales",
+      "brand": "RoyalTouch",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/philbo-ZgQzwUPh79E-unsplash_llaxg8.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/philbo-ZgQzwUPh79E-unsplash_llaxg8.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Designer Sunglasses",
+      "description": "Limited edition sunglasses from Italian brand.",
+      "price": 21999,
+      "category": "ediciones-especiales",
+      "brand": "VisionElite",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/jay-soundo-mgZSrLLZtzU-unsplash_jtcuqt.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815347/jay-soundo-mgZSrLLZtzU-unsplash_jtcuqt.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Exclusive Trench Coat",
+      "description": "Seasonal trench coat available only online.",
+      "price": 29999,
+      "category": "ediciones-especiales",
+      "brand": "FashionEra",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/bundo-kim-zkHv9pvrE9U-unsplash_mcxfig.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/bundo-kim-zkHv9pvrE9U-unsplash_mcxfig.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Limited Edition Perfume",
+      "description": "Luxury perfume with floral top notes.",
+      "price": 18999,
+      "category": "ediciones-especiales",
+      "brand": "Essenza",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/majdah-majed-kWAptxoBOW0-unsplash_hlaf1j.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/majdah-majed-kWAptxoBOW0-unsplash_hlaf1j.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    },
+    {
+      "title": "Anniversary Watch Box",
+      "description": "Collector’s box with 3 exclusive watches.",
+      "price": 39999,
+      "category": "básicos",
+      "brand": "ChronoBox",
+      "image": "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/mariah-hewines--XgtEkmyOq8-unsplash_brkkce.jpg",
+      "images": [
+        "https://res.cloudinary.com/imgenvironment/image/upload/v1751815346/mariah-hewines--XgtEkmyOq8-unsplash_brkkce.jpg"
+      ],
+      "specialEdition": false,
+      "isGiftCard": false,
+      "customizable": false,
+      "discountPercentage": 0,
+      "rating": 0,
+      "stock": 50
+    }
+  ]
+}

@@ -1,0 +1,732 @@
+/* * {
+  outline: 1px solid crimson !important;
+} */
+
+
+/* Definición de variables */
+:root {
+  /* Colores */
+  --smoky-black: #0b0e05ff;
+  --beaver: #a89686ff;
+  --dark-green: #182f1fff;
+  --smoky-black-2: #0f1106ff;
+  --timberwolf: #d6ccceff;
+  --silver: #b6b1aeff;
+   --gutter: 15px;
+  --white: #f8f9fa;
+  --text-color: #333;
+  --discount-color: #28a745;
+  --review-star-color: #ffc107;
+  --light-gold: #d4af37;
+  /* Fuentes */
+  --font-script: "Dancing Script", cursive;
+  --font-sans-serif: "Poppins", sans-serif;
+}
+
+/* Estilo de reset global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos globales */
+body {
+  margin: 0;
+  padding: 20px;
+  background: url('https://res.cloudinary.com/imgenvironment/image/upload/v1752753997/Peach_Aesthetic_Background_Flyer_wuqpkp.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+  ul, ol {
+    list-style: none; 
+    margin: 0;
+    padding: 0; 
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: var(--gutter);
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.bg-color-beaver{
+  background-color: var(--silver);
+  }
+
+.border {
+  border: 1px solid var(--timberwolf);
+  border-radius: 4px;
+}
+.border-light {
+  border: 1px solid var(--white)
+}
+.border-dashed{
+border: 1px dashed var(--timberwolf); 
+}
+
+.separator {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3); 
+  margin: 20px 0; 
+}
+
+/*----------------------------------------------------------------*/
+/* Encabezado con uso de gradiente */
+header {
+  background: linear-gradient(180deg, var(--smoky-black), var(--beaver));
+  padding: 0.5em;
+  position: relative; /* Para que el overlay de búsqueda se posicione correctamente */
+}
+#userLinks span {
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--silver);
+  color: var(--smoky-black-2);
+  padding: 20px;
+  text-align:center;
+}
+
+/* Texto para encabezados */
+h1,
+h2,
+h3 {
+  color: var(--beaver);
+  padding: 5px;
+}
+p {
+  padding: 10px;
+}
+/*-----------------------------------------------------*/
+/*Ancla a Top de la pagina*/
+/* Estilo para el botón de subir */
+.btn-subir {
+  position: fixed; 
+  bottom: 20px;    
+  right: 20px;     
+  background-color: var(--dark-green); 
+  color: var(--white);    
+  padding: 10px 20px; 
+  font-size: 16px;
+  border-radius: 50%;  
+  text-decoration: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-subir:hover {
+  background-color: var(--review-star-color); 
+  color:var(--dark-green);
+}
+/*----------------------------------------------------------------------*/
+/* Botón personalizado */
+.btn-custom {
+  font-family: var(--font-script);
+  background-color: var(--beaver);
+  border: none;
+  font-size: 2em;
+  margin: var(--gutter);
+  text-align: center;
+  padding: 10px 20px; 
+  color: var(--white);       
+  cursor: pointer;
+  transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+
+/* Propiedades adicionales para el botón */
+.btn-custom:hover {
+  background-color: var(--beaver);
+}
+.btn-custom-Light {
+  font-family: var(--font-script);
+  background-color: var(--white);
+  color:var(--beaver);
+  border: none;
+  font-size: 2em;
+  margin: var(--gutter);
+}
+
+/* Propiedades adicionales para el botón */
+.btn-custom-Light:hover {
+  background-color: var(--beaver);
+  color:var(--white);
+}
+/* Responsividad del botón */
+@media (max-width: 768px) {
+  .btn-custom, .btn-custom-Light{
+    font-size: 1.5em;   
+    padding: 8px 16px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-custom , .btn-custom-Light{
+    font-size: 1.2em;   
+    padding: 6px 12px;  
+  }
+}
+/*-------------------------------------------------------------------------*/
+/* Estilos de Navbar */
+.navbar {
+  background-color: var(--beaver);
+  padding: 1em;
+  font-family: var(--font-sans-serif);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-link {
+  color: var(--smoky-black);
+  font-weight: 500;
+  margin: 0 10px;
+  font-size: 1.1rem; /* Aumentamos un poco el tamaño de la fuente */
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--beaver);
+  text-decoration: none;
+}
+
+.navbar-brand img {  
+ width: 150px;
+  height: auto;
+  margin-right: 1em;
+}
+
+.navbar .dropdown-menu {
+  background-color:  hsla(220, 90%, 15%, 0.5);;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu .dropdown-item {
+  color: var(--timberwolf);
+  padding: 10px 20px;
+  font-size: 1rem; /* Aseguramos un tamaño de fuente consistente */
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--silver);
+  color: var(--white);
+}
+
+.nav-link {
+  margin: var(--gutter);
+}
+
+/* Botón de búsqueda */
+.form-control {
+  border-radius: 0.25rem;
+  border: 1px solid var(--silver);
+  font-family: var(--font-script);
+}
+
+/* Botón de éxito */
+.btn-outline-success {
+  color: var(--timberwolf);
+  border-color: var(--beaver);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--beaver);
+  color: var(--white);
+  border-color: var(--beaver);
+}
+
+/* Estilos para el overlay de búsqueda */
+.search-overlay {
+  display: none;
+  position: absolute;
+  top: 100%; /* Se posiciona justo debajo del header */
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1020; /* Justo debajo del z-index de la navbar de Bootstrap */
+  transition: opacity 0.3s ease;
+}
+
+.search-overlay.active {
+  display: block;
+}
+
+
+/* Estilos para el hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  padding-top: 2em;
+  background-image: url("../img/mujer-nieve.webp");
+  background-size: cover;
+  background-position: center; /* Centrar la imagen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-logo {
+  max-width: 150px;
+  margin-bottom: 0.5em;
+}
+
+.hero-title {
+  font-size: 3.5em;
+  line-height: 1.1;
+  color: var(--light-gold); 
+  font-family: 'Playfair Display', serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.3s ease; /* Efecto de escala */
+  background-color: var(--white);
+  display:inline;
+}
+
+.hero-subtitle {
+  font-size: 1.7em;
+  color: var(--dark-green);
+  font-family: 'Lora', serif;
+  margin-top: 0.3em;
+  line-height: 1.4;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.hero-title:hover, .hero-subtitle:hover {
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
+}
+/* Collection 2025*/
+
+.collection-2025{
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+margin:2em auto;
+}
+
+
+/* Sección Features */
+.features {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  margin:1em auto;
+}
+
+.feature-item {
+  max-width: 370px; 
+  margin: 5px 0;
+  padding:var(--gutter);  
+  background-color: var(--timberwolf);
+  text-align: center; 
+}
+
+.feature-item h4{
+  color: var(--dark-green);
+}
+.gift {  
+   max-width: 370px;     
+  background-image: url("../img/gift.jpeg");
+  background-size:cover;
+  background-position: center; 
+  background-repeat: no-repeat;   
+}
+
+/* Pantallas medianas y grandes */
+@media (min-width: 768px) {
+  .features {
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; 
+        
+  }
+    .feature-item {
+  width: 250px; 
+  height: 100%;
+ }
+}
+/*----------------------------------------------------------------*/
+/*Banner sale */
+
+.banner-section {
+  position: relative;
+  width: 100%;   
+  overflow: hidden; 
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index:0;
+}
+
+.banner-figure {
+  width: 100%;
+  height:auto;
+  margin: 0;
+}
+
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  z-index: 1; 
+  width: 100%; 
+  padding: 0 15px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner-text h3 {
+  font-size: 2em;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  font-size: 1.2em;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .banner-text h3 {
+    font-size: 1.5em;
+  }
+  .banner-text p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-text h3 {
+    font-size: 1.2em;
+  }
+  .banner-text p {
+    display: none; 
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+  .hero {
+    justify-content: space-between;
+    height: 70vh;
+  }
+
+  .hero-logo {
+    order: 1; /* Logo al principio */
+    margin: 1em; /* Espaciado adicional */
+  }
+
+  .container-hero-title {
+    order: 2; /* Títulos al final */
+    margin-top: auto; /* Empujar títulos hacia abajo */
+  }
+  
+  .navbar-brand img {
+    max-width: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5em;
+  }
+  .hero-subtitle {
+    font-size: 1.3em;
+  }
+  .mobile-none {
+    display: none; /* se oculta la seccion en pantallas pequenas*/
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    flex: 1 1 calc(33.333% - 15px); /* Ocupa un tercio en pantallas medianas y grandes */
+    max-width: calc(33.333% - 15px);
+   
+  }
+}
+@media (min-width: 992px) {
+  .navbar-brand img {
+    max-width: 250px;
+  }
+  .navbar .form-control {
+    max-width: 500px;
+  }
+  .hero-logo {
+    max-width: 150px;
+  }
+ 
+}
+
+@media (max-width: 991px) {
+  .navbar-brand img {
+    max-width: 150px;
+  }
+}
+/*---------------------------------------------------------------*/
+/* Estilo para los íconos de redes sociales */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.btn-social {
+  font-size: 1.5em;
+  color: var(--white); 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-social:hover {
+  color: var(--dark-green); 
+  transform: scale(1.1); 
+}
+/*--------------------------------------------------------------------*/
+/* Estilos de la sección Gift Card */
+.gift-card-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 20px; 
+  padding: 20px;
+  align-items: center; 
+  justify-items: center;
+}
+
+.gift-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.gift-card-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center; /* Centra verticalmente */
+  justify-items: center;
+}
+
+.gift-card-images img {
+  width: 60%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Estilos del botón de comprar */
+.btn-comprar,.seguir-comprando {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color:var(--light-gold); 
+  color:var(--white);
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover, .seguir-comprando:hover {
+  background-color:var(--beaver); 
+}
+/* Oculta los elementos por defecto, todos los p salvo el primero. */
+.gift-card-text p:not(:first-of-type)
+ {
+  display: none;
+}
+/*Responsive*/
+/* Muestra todos los elementos en pantallas más grandes */
+@media (min-width: 768px) {
+  
+  .gift-card-text p
+   {
+    display: block;
+  }
+}
+
+
+/*Para pantallas hasta 768px*/
+@media (max-width: 768px) {
+  .gift-card-section {
+    grid-template-columns: 1fr; 
+  }
+
+}
+
+/*------------------Carrito--------------------------------------------------*/
+/* Estilos para el cart-count */
+.cartCount {
+  font-size: 0.6rem;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.bi-bag {
+  margin-right: 8px;
+}
+.nav-link {
+  position: relative;
+}
+.cart-list img {
+  border-radius: 5px;
+}
+
+.table .btn-outline-secondary {
+  padding: 0 5px;
+}
+
+.table .btn-danger {
+  color: white;
+}
+.hidden {
+  display: none;
+}
+/******Checkout*******/
+#checkout-form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+}
+
+#checkout-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#checkout-form input,
+#checkout-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#checkout-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#checkout-form button:hover {
+  background-color: #218838;
+}
+
+#success-message {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  background-color: #d4edda;
+  color: #155724;
+  max-width: 400px;
+}
+
+#cart-summary {
+  margin-top: 15px;
+}
+
+.carrito-btn {
+    min-width: 150px; 
+    height: 50px;     
+    font-size: 16px;  
+  }
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espacio entre filas */
+    margin: auto; /* Centra horizontalmente en la página */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    padding: 1rem; /* Opcional: Añade un poco de espacio interno */
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .carrito-btn {
+    flex: 1; /* Hace que los botones tengan un tamaño uniforme */
+    margin: 0 5px; /* Espacio entre botones */
+  }
+
+
+/* Estilos stock status */
+  .stock-status {
+  font-weight: bold;
+}
+
+.stock-status.en-stock {
+  color: green;
+}
+
+.stock-status.pocas-unidades {
+  color: orange;
+}
+
+.stock-status.agotado {
+  color: red;
+}

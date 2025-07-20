@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fuentes Googleapis.com -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap"
+    rel="stylesheet">
+<!-- sweetalert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Boostrap icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!--Estilos -->
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/cards-index.css">
+  <link rel="stylesheet" href="/styles/tienda.css">
+  <link rel="stylesheet" href="/styles/reviews.css">
+
+  <title>CheBonita-Tienda online</title>
+</head>
+
+<body>
+  <!-- Header se carga aquí -->
+  <div id="header-placeholder"></div>
+
+  <main >
+<!-- El ancla "top" al principio de la página -->
+<div id="top"></div>
+
+    <!-- Carrusel de Logos Clickeables -->
+    <div id="logoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Primera diapositiva -->
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-3">
+              <a href="http://www.chanel.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/img/chanel.gif" class="d-block mx-auto" alt="Chanel" >
+              </a>
+            </div>
+            <div class="col-3">
+              <a href="https://www.rapsodia.com.mx/new-in" target="_blank" rel="noopener noreferrer">
+                <img src="/img/rapsodia.ai_.png" class="d-block mx-auto" alt="Rapsodia" >
+              </a>
+            </div>
+            <div class="col-3">
+              <a href="https://www.prune.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/prune.png" class="d-block mx-auto" alt="Prune" >
+              </a>
+            </div>
+            <div class="col-3">
+              <a href="https://www.dior.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/Dior.png" class="d-block mx-auto" alt="Dior" >
+              </a>              
+            </div>            
+          </div>
+        </div>
+<!-- Segunda diapositiva -->
+<div class="carousel-item ">
+  <div class="row">
+    <div class="col-3">
+      <a href="http://www.chanel.com/" target="_blank" rel="noopener noreferrer">
+        <img src="/img/chanel.gif" class="d-block mx-auto" alt="Chanel">
+      </a>
+    </div>
+    <div class="col-3">
+      <a href="https://www.rapsodia.com.mx/new-in" target="_blank" rel="noopener noreferrer">
+        <img src="/img/rapsodia.ai_.png" class="d-block mx-auto" alt="Rapsodia">
+      </a>
+    </div>
+    <div class="col-3">
+      <a href="https://www.prune.com.ar" target="_blank" rel="noopener noreferrer">
+        <img src="/img/prune.png" class="d-block mx-auto" alt="Prune">
+      </a>
+    </div>
+    <div class="col-3">
+      <a href="https://www.dior.com" target="_blank" rel="noopener noreferrer">
+        <img src="/img/Dior.png" class="d-block mx-auto" alt="Dior">
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+      </div>
+      <!-- Controles de Carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#logoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#logoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+<!-- Mensaje con alert -->
+<div class="alert alert-info d-flex justify-content-between align-items-center" role="alert">
+  <div class="text-center mx-auto" >
+    <strong >¡Recuerda el evento de marcas de lujo internacionales y argentinas!<br> Che Bonita te espera el sábado 26/07 a las 20 hs. en el Hotel Sheraton Buenos Aires - Reserva tu lugar en nuestra sucursal!</strong><br>
+    Descubre las últimas colecciones de tus marcas favoritas: Gucci, Cardon, Rapsodia y muchas más.
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    <!-- Sección de productos con Flexbox -Tienda Online -->
+<div class="store-layout">
+      <nav class="store-nav">
+        <h2>Categorías</h2>
+       
+       <ul class="category-list">
+     <li><a href="#" class="category-link" data-category="all">Todos los productos</a></li>    
+  <li><a href="#" class="category-link" data-category="ediciones-especiales">Ediciones especiales</a></li>
+  <li><a href="#" class="category-link" data-category="básicos">Básicos</a></li>
+  <li><a href="#" class="category-link" data-category="carteras">Carteras</a></li>
+  <li><a href="#" class="category-link" data-category="vestidos">Vestidos</a></li>
+  <li><a href="#" class="category-link" data-category="joyería">Joyería</a></li>
+  <li><a href="#" class="category-link" data-category="zapatos">Zapatos</a></li>
+  <li><a href="#" class="category-link" data-category="relojes">Relojes</a></li>
+  <li><a href="#" class="category-link" data-category="gift-cards">GIFT CARD</a></li>
+</ul>
+      </nav>
+      <div class="store-main">
+        <h2 id="products-title" class="visually-hidden">Catálogo de productos</h2>  
+          <section id="sale" class="product-cards " aria-labelledby="sale">
+            <h2>CheBonita - Catálogo de productos</h2>
+            <ul class="product-list" id="product-list">
+              <!-- Los productos se cargarán aquí dinámicamente -->
+            </ul>
+            <button class="load-more">Más productos</button>
+          </section>
+      </div>
+</div>
+<!-- Botón para ir hacia arriba -->
+<a href="#top" class="btn-subir" id="btnSubir">
+  ↑ Subir
+</a>
+  </main>
+<!-- Footer -->
+  <div id="footer-placeholder"></div> <!-- Footer se carga aquí -->
+
+ <!-- Bootstrap JS + Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    
+    <script type="module" src="/js/loadHeaderFooter.js"></script>
+    <script type="module" src="/js/fetchProducts.js"></script>
+    <script type="module" src="/js/cart.js" defer></script>
+</body>
+
+</html>

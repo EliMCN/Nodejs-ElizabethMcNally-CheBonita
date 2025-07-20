@@ -1,0 +1,40 @@
+{
+  "name": "chebonita-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Che Bonita eCommerce project",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+     "import-products": "node src/scripts/importProductsToFirestore.js",
+     "import-users": "node src/scripts/importUsersToFirestore.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "api",
+    "chebonita"
+  ],
+  "author": "Elizabeth Mc Nally",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "chalk": "^5.4.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "firebase": "^11.10.0",
+    "firebase-admin": "^13.4.0",
+    "helmet": "^8.1.0",
+    "inquirer": "^9.2.7",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^7.0.5",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

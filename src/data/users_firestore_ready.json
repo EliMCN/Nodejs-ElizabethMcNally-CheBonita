@@ -1,0 +1,47 @@
+[
+  {
+    "documentId": "5ea81d6b-5c4a-4856-aa19-0a50488b612d",
+    "fields": {
+      "email": "admin@chebonita.com",
+      "passwordHash": "$2b$12$ZHt83Zhu4ZSkucoJGoN2zOfCh2R70rMlEqOlwB4O3BN3CeA32Q7Sy",
+      "role": "admin",
+      "active": true,
+      "name": "Admin",
+      "address": {
+        "street": "Calle Ficticia",
+        "city": "Ciudad",
+        "zip": "0000"
+      }
+    }
+  },
+  {
+    "documentId": "8697fa6f-b6fe-4ad6-92e9-cc91289f2b8e",
+    "fields": {
+      "email": "cliente@chebonita.com",
+      "passwordHash": "$2b$12$dzdTE.7Aimt3XdRhIzt3Z.3DuGCMkPy9aTUe3vBfTlNtQf.DSv/4S",
+      "role": "cliente",
+      "active": true,
+      "name": "Cliente",
+      "address": {
+        "street": "Calle Ficticia",
+        "city": "Ciudad",
+        "zip": "0000"
+      }
+    }
+  },
+  {
+    "documentId": "7f18dad7-84d6-4b23-af6f-fa7ef0fede95",
+    "fields": {
+      "email": "cliente2@chebonita.com",
+      "passwordHash": "$2b$12$jl.ULvAj9.wkA.tiN6F1B..1FliYqLfR8DQZfaAAParE7h/IRcudm",
+      "role": "cliente",
+      "active": true,
+      "name": "Cliente2",
+      "address": {
+        "street": "Calle Ficticia",
+        "city": "Ciudad",
+        "zip": "0000"
+      }
+    }
+  }
+]
