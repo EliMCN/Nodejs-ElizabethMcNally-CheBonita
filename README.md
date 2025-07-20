@@ -69,15 +69,12 @@ npm install
 4. Configurar Variables de Entorno
 Crea un archivo .env en la raíz del proyecto y añade las siguientes variables. Necesitarás generar un archivo de credenciales de servicio desde tu proyecto de Firebase.
 
-```env
+```dotenv
 # Clave secreta para firmar los tokens JWT
 JWT_SECRET=tu_clave_super_secreta_aqui
 
-# Credenciales de Firebase (obtenidas desde tu consola de Firebase)
-# Asegúrate de que el JSON esté en una sola línea o usa comillas.
-FIREBASE_PROJECT_ID="tu-project-id"
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...tu-clave-privada...\n-----END PRIVATE KEY-----\n"
-FIREBASE_CLIENT_EMAIL="firebase-adminsdk-...@tu-project-id.iam.gserviceaccount.com"
+# Credenciales de Firebase: Pega aquí el contenido completo de tu archivo serviceAccountKey.json
+FIREBASE_CONFIG_JSON='{"type": "service_account", "project_id": "...", ...}'
 ```
 5. Ejecutar el Servidor en Modo Desarrollo
 ```bash
