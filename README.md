@@ -59,8 +59,9 @@ Tener instalado Node.js (versión 18 o superior).
 Tener una cuenta de Firebase con un proyecto y Firestore habilitado.
 2. Clonar el Repositorio
 ```bash
-git clone https://github.com/EliMCN/Nodejs-ElizabethMcNally-CheBonita.git
+git clone https://github.com/tu-usuario/chebonita-backend-vercel.git Chebonita-backend
 cd Chebonita-backend
+
 ```
 3. Instalar Dependencias
 ```bash
