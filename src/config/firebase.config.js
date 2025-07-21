@@ -1,33 +1,44 @@
 // config/firebase.config.js
-import admin from 'firebase-admin';
 import dotenv from 'dotenv';
+import { initializeApp, cert, getApps } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
-// Cargar variables desde .env
 dotenv.config();
 
-// Construimos el objeto de credenciales a partir de las variables de entorno.
-// Esto funciona tanto en local (leyendo .env) como en producción (leyendo las variables de Vercel).
-const serviceAccount = {
-  type: process.env.FIREBASE_TYPE,
-  project_id: process.env.FIREBASE_PROJECT_ID,
-  private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-  // Reemplazamos los caracteres de escape '\\n' por saltos de línea reales '\n'.
-  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-  client_email: process.env.FIREBASE_CLIENT_EMAIL,
-  client_id: process.env.FIREBASE_CLIENT_ID,
-  auth_uri: process.env.FIREBASE_AUTH_URI,
-  token_uri: process.env.FIREBASE_TOKEN_URI,
-  auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
-  client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
-  universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN,
-};
+let serviceAccount;
 
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+// En Vercel (producción), usamos una única variable Base64 para evitar problemas de formato.
+if (process.env.FIREBASE_SERVICE_ACCOUNT_BASE64) {
+  try {
+    const serviceAccountJson = Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT_BASE64, 'base64').toString('utf-8');
+    serviceAccount = JSON.parse(serviceAccountJson);
+  } catch (error) {
+    console.error("Error al decodificar la variable de entorno de Firebase Base64:", error);
+    throw new Error('FIREBASE_SERVICE_ACCOUNT_BASE64 no es un JSON válido en Base64.');
+  }
+} else {
+  // En local, leemos el archivo directamente para mayor comodidad.
+  try {
+    const { readFileSync } = await import('fs');
+    const { fileURLToPath } = await import('url');
+    const path = (await import('path')).default;
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const serviceAccountPath = path.resolve(__dirname, 'serviceAccountKey.json');
+    serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf-8'));
+  } catch (error) {
+    console.error("No se encontró el archivo serviceAccountKey.json para desarrollo local.");
+    throw new Error('Falta la configuración de Firebase. Define FIREBASE_SERVICE_ACCOUNT_BASE64 en producción o asegúrate de que serviceAccountKey.json exista en src/config/ para desarrollo local.');
+  }
+}
+
+// Prevent reinitializing Firebase multiple times
+if (!getApps().length) {
+  initializeApp({
+    credential: cert(serviceAccount),
   });
 }
 
-export const db = admin.firestore();
-export { admin };
-export const auth = admin.auth();
+const db = getFirestore();
+export { db };

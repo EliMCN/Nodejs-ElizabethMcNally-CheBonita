@@ -53,10 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         paymentMethod,
       });
 
-      localStorage.removeItem("cart");
-      actualizarNumeroCarrito();
-      renderCart();
-// Usamos la función centralizada para asegurar que se notifiquen los cambios y se renderice todo.
+      // Usamos la función centralizada para asegurar que se notifiquen los cambios y se renderice todo.
       reiniciarCarrito();
       checkoutFormContainer.classList.add("hidden");
       successMessage.classList.remove("hidden");
