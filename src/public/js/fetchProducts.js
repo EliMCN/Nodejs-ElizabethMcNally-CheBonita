@@ -116,17 +116,17 @@ async function loadPage({ category = "", search = "" } = {}) {
 // INICIALIZACIÓN PRINCIPAL
 // =======================
 async function initializeProductList() {
-  const searchQuery = localStorage.getItem("searchQuery");
-  const selectedCategory = localStorage.getItem("selectedCategory");
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get('search'); // Para futuras búsquedas
+  const selectedCategory = urlParams.get('category');
 
   currentPage = 1;
 
   if (searchQuery) {
-    localStorage.removeItem("searchQuery");
     currentSearch = searchQuery;
+    // Opcional: actualizar el campo de búsqueda visualmente
     await loadPage({ search: currentSearch });
   } else if (selectedCategory) {
-    localStorage.removeItem("selectedCategory");
     currentCategory = selectedCategory === "all" ? "" : selectedCategory;
     await loadPage({ category: currentCategory });
   } else {

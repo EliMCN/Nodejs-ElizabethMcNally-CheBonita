@@ -1,7 +1,7 @@
 //  middlewares/auth.middleware.js (modo local con JWT)
 import { verifyToken } from '../services/jwt.service.js';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecreto123';
+const JWT_SECRET = process.env.JWT_SECRET ;
 
 export const requireAuth = (req, res, next) => {
   const token = req.cookies.token;

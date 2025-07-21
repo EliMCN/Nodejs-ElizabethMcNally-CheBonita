@@ -1,4 +1,4 @@
-// controllers/auth.controller.js (modo local con JSON + JWT)
+// controllers/auth.controller.js
 import bcrypt from 'bcryptjs';
 import { generateToken } from '../services/jwt.service.js';
 import crypto from 'crypto';
@@ -10,9 +10,6 @@ import {
   findUserBy
 } from '../services/user.service.js';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecreto123';
-
-// auth.controller.js
 export const register = async (req, res) => {
   const { name, email, password, role = 'cliente', address } = req.body;
 

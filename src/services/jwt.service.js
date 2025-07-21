@@ -1,7 +1,7 @@
 // services/jwt.service.js
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecreto123';
+const JWT_SECRET = process.env.JWT_SECRET;
 const EXPIRES_IN = '2h';
 
 /**

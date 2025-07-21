@@ -111,8 +111,11 @@ function configurarFiltradoPorCategoria() {
       const selectedCategory = link.dataset.category;
       if (!selectedCategory) return;
 
-      localStorage.setItem("selectedCategory", selectedCategory);
-      window.location.href = "tienda.html";
+      // Construir la URL con el parámetro de categoría
+      const currentPath = window.location.pathname;
+      const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      const targetUrl = `${basePath}tienda.html?category=${selectedCategory}`;
+      window.location.href = targetUrl;
     });
   });
 }
