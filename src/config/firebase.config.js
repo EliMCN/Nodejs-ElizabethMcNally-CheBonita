@@ -5,23 +5,22 @@ import dotenv from 'dotenv';
 // Cargar variables desde .env
 dotenv.config();
 
-let serviceAccount;
-
-if (process.env.FIREBASE_CONFIG_JSON) {
-  // Entorno de producción (Vercel): la variable de entorno contiene el JSON como un string.
-  serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG_JSON);
-} else {
-  // Entorno local: leemos el archivo de credenciales directamente.
-  // Esto requiere un import dinámico porque 'fs' no debe cargarse en el navegador o en Vercel si no se usa.
-  const { readFileSync } = await import('fs');
-  const { fileURLToPath } = await import('url');
-  const path = (await import('path')).default;
-
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  const serviceAccountPath = path.resolve(__dirname, 'serviceAccountKey.json');
-  serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf-8'));
-}
+// Construimos el objeto de credenciales a partir de las variables de entorno.
+// Esto funciona tanto en local (leyendo .env) como en producción (leyendo las variables de Vercel).
+const serviceAccount = {
+  type: process.env.FIREBASE_TYPE,
+  project_id: process.env.FIREBASE_PROJECT_ID,
+  private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+  // Reemplazamos los caracteres de escape '\\n' por saltos de línea reales '\n'.
+  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+  client_email: process.env.FIREBASE_CLIENT_EMAIL,
+  client_id: process.env.FIREBASE_CLIENT_ID,
+  auth_uri: process.env.FIREBASE_AUTH_URI,
+  token_uri: process.env.FIREBASE_TOKEN_URI,
+  auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
+  client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
+  universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN,
+};
 
 if (!admin.apps.length) {
   admin.initializeApp({
