@@ -37,6 +37,22 @@ async function fetchProductsFromBackend({ category = "", search = "", page = 1, 
 // =======================
 // RENDERIZADO
 // =======================
+function getStockStatus(stock) {
+  if (stock > 10) {
+    return {
+      text: "En stock",
+      className: "en-stock",
+    };
+  }
+  if (stock > 0) {
+    return {
+      text: "Últimas unidades",
+      className: "pocas-unidades",
+    };
+  }
+  return { text: "Agotado", className: "agotado" };
+}
+
 function createProductCard(product) {
   const card = document.createElement("li");
   card.classList.add("product-card");
@@ -45,32 +61,17 @@ function createProductCard(product) {
     ? ""
     : `$${product.price.toFixed(2)}`;
 
+  const stockStatus = getStockStatus(product.stock);
+
   card.innerHTML = `
     <figure class="product-figure">
       <img src="${product.image || "/img/logo.webp"}" alt="${product.title}" loading="lazy">
       <figcaption class="caption">
         <h3 class="caption-title">${product.title}</h3>
         <div class="location">${product.brand}</div>
-        <p class="description">${product.description}</p>
         <div class="price">${priceContent}</div>
-        ${(() => {
-  const statusClass =
-    product.stock > 10
-      ? "en-stock"
-      : product.stock > 0
-      ? "pocas-unidades"
-      : "agotado";
-
-  const statusText =
-    product.stock > 10
-      ? "En stock"
-      : product.stock > 0
-      ? "Últimas unidades"
-      : "Agotado";
-
-  return `<p class="stock-status ${statusClass}">${statusText}</p>`;
-})()}
-        <a href="product-details.html?id=${product.id}" class="btn btn-outline-success btn-center">Ver más</a>
+        <p class="stock-status ${stockStatus.className}">${stockStatus.text}</p>
+        <a href="/web/product-details.html?id=${product.id}" class="btn btn-outline-success btn-center">Ver más</a>
       </figcaption>
     </figure>
   `;
@@ -113,6 +114,19 @@ async function loadPage({ category = "", search = "" } = {}) {
 }
 
 // =======================
+// HELPERS
+// =======================
+function updateActiveCategoryLink(activeCategory) {
+  // Si no hay categoría, el link "Todos los productos" debe ser el activo.
+  const categoryToMatch = activeCategory || "all";
+  document.querySelectorAll(".category-list a").forEach((link) => {
+    link.classList.remove("active");
+    if (link.dataset.category === categoryToMatch) {
+      link.classList.add("active");
+    }
+  });
+}
+// =======================
 // INICIALIZACIÓN PRINCIPAL
 // =======================
 async function initializeProductList() {
@@ -121,6 +135,7 @@ async function initializeProductList() {
   const selectedCategory = urlParams.get('category');
 
   currentPage = 1;
+  updateActiveCategoryLink(selectedCategory); // Marcar el link activo al cargar la página
 
   if (searchQuery) {
     currentSearch = searchQuery;
@@ -144,33 +159,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelectorAll(".category-list a").forEach((link) => {
-  link.addEventListener("click", async (e) => {
-    e.preventDefault();
-
-    const selected = link.dataset.category;
-
-    // Actualizar visualmente
-    document.querySelectorAll(".category-list a").forEach((l) =>
-      l.classList.remove("active")
-    );
-    link.classList.add("active");
-
-    // Asignar categoría
-    currentCategory = selected === "all" ? "" : selected;
-    currentSearch = "";
-    currentPage = 1;
-
-    await loadPage({ category: currentCategory });
-  });
-});
-
-  // Escuchar el evento personalizado de búsqueda desde el header
-  document.addEventListener('performSearch', async (e) => {
-    const query = e.detail.query;
-    currentSearch = query;
-    currentCategory = ""; // Resetear categoría al buscar
-    currentPage = 1;
-    await loadPage({ search: currentSearch });
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const category = link.dataset.category;
+      // Simplemente navegamos a la URL correcta. La página se recargará
+      // y `initializeProductList` se encargará del resto.
+      window.location.href = `/web/tienda.html?category=${category}`;
+    });
   });
 
   initializeProductList();

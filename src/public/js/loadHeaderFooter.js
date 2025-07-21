@@ -1,6 +1,7 @@
 //C:\Users\NuestraCompu\Desktop\CheBonita -Firestore\Chebonita-backend\src\public\js\loadHeaderFooter.js
 
 import { toastSuccess, toastError } from './toast.js';
+import { actualizarNumeroCarrito } from './cart.js';
 document.addEventListener("DOMContentLoaded", () => {
 
   const loadHTML = async (url, placeholderId, callback) => {
@@ -31,24 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarBuscador(); // Configura el buscador
     configurarFiltradoPorCategoria(); // Configura el filtrado por categoría
     verificarEstadoUsuario(); // Verifica el estado del usuario
+
+    // Escuchar el evento personalizado 'cartUpdated' que se dispara desde cart.js
+    // Esto asegura que el contador del carrito en el header se actualice en tiempo real.
+    window.addEventListener('cartUpdated', () => {
+      actualizarNumeroCarrito();
+    });
   });
 
   // Cargar footer (sin callback en este caso)
   loadHTML("/web/footer.html", "footer-placeholder");
 });
-
-// Función para actualizar el carrito
-function actualizarNumeroCarrito() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-
-  const cartCount = document.getElementById("cartCount");
-
-  if (cartCount) {
-    cartCount.innerText = totalItems;
-    cartCount.classList.toggle("d-none", totalItems === 0);
-  }
-}
 
 // Función para configurar el buscador
 function configurarBuscador() {
@@ -59,20 +53,15 @@ function configurarBuscador() {
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault(); // Evitar recargar la página
       const query = searchInput.value.trim(); // Leer la consulta
-      if (!query) return; // No hacer nada si la búsqueda está vacía
+      if (!query) return;
 
+      // Siempre redirigir a la página de la tienda con el parámetro de búsqueda en la URL.
+      // Esto unifica el comportamiento y hace que las búsquedas sean compartibles.
       const currentPath = window.location.pathname;
-
-      // Si no estás en la página de tienda, redirige
-      if (!currentPath.includes("tienda.html")) {
-        // Guarda la búsqueda en localStorage y redirige
-        localStorage.setItem("searchQuery", query);
-        window.location.href = `tienda.html`;
-      } else {
-        // Si ya estás en la tienda, dispara un evento personalizado para que fetchProducts.js lo maneje
-        const searchEvent = new CustomEvent('performSearch', { detail: { query } });
-        document.dispatchEvent(searchEvent);
-      }
+      // Obtenemos la ruta base para construir la URL correctamente desde cualquier página.
+      const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      const targetUrl = `${basePath}tienda.html?search=${encodeURIComponent(query)}`;
+      window.location.href = targetUrl;
     });
   } else {
     console.error("No se encontró el formulario o el input de búsqueda.");

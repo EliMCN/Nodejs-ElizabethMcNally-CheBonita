@@ -1,12 +1,8 @@
 
 /* Contenedor principal de los productos */
 .product-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; 
   padding: 20px;
-  height:auto;
+  /* Se elimina display:flex para que los hijos (h2, ul, button) se apilen verticalmente */
 }
 
 /* Lista de productos */
@@ -14,15 +10,15 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  /* Usamos Grid para un control total sobre las columnas */
+  display: grid;
+  /* Columnas flexibles: se llenará con tantas columnas de 280px como quepan */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
-  justify-content: center;
 }
 
 /* Estilos para cada tarjeta de producto */
 .product-card {
-  width: calc(33.33% - 15px); /* 3 fracciones por tarjeta */
   height:auto;
   background-color: var(--white);
   border-radius: 8px;
@@ -73,19 +69,6 @@
   font-size: 1rem;
   color:var(--beaver);
   margin-bottom: 15px;
-}
-/* Estilos para la versión móvil (pantallas pequeñas) */
-
-@media (max-width: 768px) {
-  .product-card {
-    width: calc(50% - 20px); /* 2 tarjetas por fila en pantallas medianas */
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card {
-    width: 100%; /* 1 tarjeta por fila en pantallas pequeñas */
-  }
 }
 
 /*Detalle de productos- Section reviews*/

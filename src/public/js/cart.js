@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("cart");
       actualizarNumeroCarrito();
       renderCart();
-
+// Usamos la función centralizada para asegurar que se notifiquen los cambios y se renderice todo.
+      reiniciarCarrito();
       checkoutFormContainer.classList.add("hidden");
       successMessage.classList.remove("hidden");
 
@@ -72,24 +73,22 @@ function getFromStorage(key) {
 
 function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
+  // Despachamos un evento global para que otras partes de la UI (como el header)
+  // puedan reaccionar a los cambios en el carrito.
+  window.dispatchEvent(new CustomEvent('cartUpdated'));
 }
 
 function actualizarNumeroCarrito() {
   const cart = getFromStorage("cart");
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
-  const cartCountDesktop = document.getElementById("cartCountDesktop");
-  const cartCountMobile = document.getElementById("cartCountMobile");
+  const cartCount = document.getElementById("cartCount");
+  if (!cartCount) return; // Salir si el elemento no existe (ej. en páginas sin header)
 
-  if (cartCountDesktop) {
-    cartCountDesktop.innerText = totalItems;
-    cartCountDesktop.classList.toggle("d-none", totalItems === 0);
-  }
-  if (cartCountMobile) {
-    cartCountMobile.innerText = totalItems;
-    cartCountMobile.classList.toggle("d-none", totalItems === 0);
-  }
+  cartCount.innerText = totalItems;
+  cartCount.classList.toggle("d-none", totalItems === 0);
 }
+
 
 function renderCart() {
   const cartContainer = document.querySelector(".cart-list");
@@ -194,6 +193,8 @@ function addToCart({ id, title, price, image }) {
 
 function reiniciarCarrito() {
   localStorage.removeItem("cart");
+  // Despachamos un evento global para que el header se actualice.
+  window.dispatchEvent(new CustomEvent('cartUpdated'));
   actualizarNumeroCarrito();
   renderCart();
 }
