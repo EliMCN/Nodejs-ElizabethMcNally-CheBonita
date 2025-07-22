@@ -58,14 +58,6 @@
   text-decoration: underline;
 }
 
-/* Ajustar tamaño máximo de los logos */
-.carousel-item img {
-    max-width: 80px;
-    margin: auto;
-}
-
-
-
 
 /* Estilo general para las tarjetas de productos en Tienda.html */
 /* El css base de card esta en index html , aqui se amplia la card con mas info*/
@@ -118,89 +110,87 @@
 
 /* Carrousel en Tienda.htnl*/
 
-/* Carrusel de Logos */
-#logoCarousel .carousel-inner {
-  text-align: center; 
+#brandBanner {
+  background: #fff;
+  padding: 3em 0;
+  overflow: hidden;
 }
 
-#logoCarousel .carousel-item {
-  padding: 0.5em; 
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
 
-#logoCarousel .carousel-item img {
-  max-width: 8em; 
-  height: auto; 
-  transition: transform 0.3s ease; /* Animación para un efecto de zoom al pasar el mouse */
-border-radius: 50%; 
-  object-fit: cover; 
-   
-}
-
-/* Efecto de zoom al pasar el mouse sobre los logos */
-#logoCarousel .carousel-item img:hover {
-  transform: scale(1.1);
-}
-
-/* Estilo para los controles de carrusel */
-.carousel-control-prev, .carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.5); 
-  border-radius: 50%; /* Bordes redondeados */
-  width: 3em;
-  height: 3em;
-  display: flex; 
-  justify-content: center; 
+.logo-track {
+  display: flex;
+  animation: scrollLoop 30s linear infinite;
+  width: max-content;
+  gap: 3em; /* Espaciado horizontal uniforme entre logos */
   align-items: center;
-  position: absolute; /* Posiciona los controles en los bordes */
-  top: 50%; /* Centrado verticalmente */
-  transform: translateY(-50%); /* Centrado vertical ajustado */
-}
-.carousel-control-prev {
-  left: 0.5em; 
 }
 
-.carousel-control-next {
-  right: 0.5em;
-}
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  background-color:var(--white); /* Iconos de los controles en blanco */
-  width: 1em; 
-  height: 1em;
+.logo-group {
+  display: flex;
+  gap: 5em;
+  padding: 2em 1em;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #logoCarousel .carousel-item img {
-    width: 5em;
-  height: auto; 
+/* Logo exterior: sin transform aquí */
+.logo-wrapper {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 50%;
+  pointer-events: none; /* <-- Evita hover en wrapper */
+}
+
+.logo-inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  will-change: transform;
+  pointer-events: auto; /* <-- Activa hover solo en círculo */
+}
+
+.logo-inner:hover {
+  transform: scale(1.15);
+  background-color: #e6e6fa;
+  z-index: 2;
+}
+
+.logo-inner img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
   }
-  .carousel-control-prev, .carousel-control-next {
-    width: 2.5em; 
-    height: 2.5em; 
-  }
-
-  .carousel-control-prev-icon, .carousel-control-next-icon {
-    width: 1.2em; 
-    height: 1.2em;
+  100% {
+    transform: translateX(-33.333%);
   }
 }
 
-@media (max-width: 576px) {
-  #logoCarousel .carousel-item img {
-   width: 3em;
-  height: auto;
 
-  }
-.carousel-control-prev, .carousel-control-next {
-    width: 2em; 
-    height: 2em; 
-  }
 
-  .carousel-control-prev-icon, .carousel-control-next-icon {
-    width: 1em; 
-    height: 1em; 
-   }
 
-}
 /******Paginacion  */
 .load-more {
     display: block;

@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cargar footer (sin callback en este caso)
   loadHTML("/web/footer.html", "footer-placeholder");
+
 });
 
 // Función para configurar el buscador

@@ -153,6 +153,7 @@ async function initializeProductList() {
 // EVENTOS DOM
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
+
   document.querySelector(".load-more")?.addEventListener("click", async () => {
     currentPage++;
     await loadPage({ category: currentCategory, search: currentSearch });
