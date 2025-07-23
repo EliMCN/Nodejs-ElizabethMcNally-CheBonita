@@ -1,7 +1,20 @@
-# Che Bonita - eCommerce Full-Stack
-Este proyecto es un sitio web de eCommerce full-stack para "Che Bonita", una tienda de moda y accesorios. Originalmente concebido como un proyecto frontend para el curso Talento Tech (puedes visitar la versión original [aquí](https://github.com/EliMCN/CheBonita)), ha evolucionado para incluir un backend robusto con Node.js y Express, una base de datos en la nube con Google Firestore, y un sistema completo de autenticación y gestión.
+# Che Bonita — eCommerce Full-Stack
 
-La plataforma ofrece una experiencia de usuario atractiva y responsive, permitiendo a los clientes explorar colecciones, buscar productos, gestionar su carrito de compras y a los administradores gestionar el catálogo y los usuarios desde un panel dedicado.
+Este proyecto es un sitio web de eCommerce full-stack desarrollado para **Che Bonita**, una tienda de moda y accesorios. Fue concebido originalmente como un proyecto frontend para el curso **Talento Tech** (puedes visitar la versión original [aquí](https://github.com/EliMCN/CheBonita)), y ha evolucionado hacia una aplicación completa que incluye:
+
+- **Backend robusto** con Node.js y Express.
+- **Base de datos en la nube** con Google Firestore.
+- **Sistema completo de autenticación y gestión de usuarios** mediante JWT y cookies seguras.
+
+Se trata de un proyecto **100% original**, diseñado y desarrollado personalmente desde cero, incluyendo:
+
+- La idea de negocio y la arquitectura técnica.
+- El diseño de interfaz, experiencia de usuario y logotipo.
+- La implementación completa del frontend, backend y la estructura de datos.
+
+Este sistema se encuentra en desarrollo activo, con el objetivo de convertirse en una **aplicación de producción funcional para un emprendimiento familiar real**.
+
+---
 
 ## Características Principales
 Para Clientes:
