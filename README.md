@@ -85,15 +85,26 @@ cd Chebonita-backend
 ```bash
 npm install
 ```
-4. Configurar Variables de Entorno
-Crea un archivo .env en la raíz del proyecto y añade las siguientes variables. Necesitarás generar un archivo de credenciales de servicio desde tu proyecto de Firebase.
+##  4. Configurar Variables de Entorno
+
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables.  
+Estas permiten la conexión con Firebase, envío de correos y autenticación de usuarios.
 
 ```dotenv
-# Clave secreta para firmar los tokens JWT
-JWT_SECRET=tu_clave_super_secreta_aqui
+#  JWT
+JWT_SECRET=tu_clave_super_secreta
 
-# Credenciales de Firebase: Pega aquí el contenido completo de tu archivo serviceAccountKey.json
+#  Firebase (pegar el contenido completo del serviceAccountKey.json como string)
 FIREBASE_CONFIG_JSON='{"type": "service_account", "project_id": "...", ...}'
+
+#  URL del frontend (usada para generar enlaces de recuperación de contraseña)
+FRONTEND_URL=http://localhost:4000
+
+#  Configuración de email (solo para entorno de producción, opcional en desarrollo con Ethereal)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=465
+EMAIL_USER=tu-cuenta@gmail.com
+EMAIL_PASS=clave-de-aplicación-generada
 ```
 5. Ejecutar el Servidor en Modo Desarrollo
 ```bash
@@ -111,6 +122,29 @@ npm run import-users: Ejecuta un script para poblar la base de datos con usuario
 El proyecto está configurado para un despliegue sencillo en Vercel. El archivo vercel.json en la raíz del proyecto contiene las directivas necesarias para que Vercel construya y sirva correctamente tanto el backend como el frontend.
 
 Para desplegar, simplemente importa el repositorio de GitHub en Vercel y asegúrate de configurar las mismas variables de entorno que usaste en tu archivo .env en el panel de configuración del proyecto de Vercel.
+
+##  Sitio en Producción
+
+La aplicación está desplegada y disponible públicamente en:
+
+ **[Che Bonita eCommerce en Vercel](https://nodejs-elizabeth-mc-nally-che-bonita.vercel.app/)**
+
+---
+
+##  Recuperación de Contraseña
+
+Si olvidaste tu contraseña, podés usar la opción **"¿Olvidaste tu contraseña?"** en la página de inicio de sesión.
+
+Recibirás un correo desde:
+
+ **chebonitatienda@gmail.com**
+
+>  *Recordá revisar tu carpeta de spam o promociones si no ves el correo en la bandeja principal.*
+
+El enlace de recuperación tiene una validez de 1 hora.  
+Por seguridad, el sistema no indicará si el correo está registrado o no.
+
+---
 
 ##  Autor
 Che Bonita fue desarrollado por Elizabeth Mc Nally. Para cualquier consulta, no dudes en contactarme.
