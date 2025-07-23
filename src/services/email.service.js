@@ -28,15 +28,17 @@ export const sendResetPasswordEmail = async (to, resetURL) => {
     });
   }
 
+  // Construimos la URL absoluta del logo usando la variable de entorno del frontend.
+  // Esto asegura que se use el mismo logo que en el sitio web.
+  const logoUrl = `${process.env.FRONTEND_URL}/img/logo.webp`;
+
   const mailOptions = {
     from: '"Che Bonita" <no-reply@chebonita.com>',
     to,
     subject: "Recuperación de Contraseña",
     html: `
     <div style="font-family: Arial, sans-serif; background-color: #fff8f4; padding: 20px; border-radius: 10px;">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <img src="https://res.cloudinary.com/imgenvironment/image/upload/v1752757729/logo_gc4vs9.webp" alt="Che Bonita" style="max-width: 180px;" />
-      </div>
+      <div style="text-align: center; margin-bottom: 20px;"><img src="${logoUrl}" alt="Che Bonita" style="max-width: 180px;" /></div>
 
       <h2 style="color: #8b5c2c;">Recuperación de Contraseña</h2>
       <p style="color: #333;">Hola, hemos recibido una solicitud para restablecer tu contraseña. Si fuiste tú, haz clic en el botón de abajo:</p>
