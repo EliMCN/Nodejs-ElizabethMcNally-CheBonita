@@ -20,6 +20,9 @@ export function generateToken(payload, options = {}) {
  * @returns {Object} payload decodificado
  * @throws Error si el token es inválido o expiró
  */
+
+
+console.log(' JWT_SECRET:', JWT_SECRET);
 export function verifyToken(token) {
   return jwt.verify(token, JWT_SECRET);
 }

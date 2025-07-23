@@ -48,10 +48,11 @@ export const login = async (req, res) => {
 
     //  Setear cookie con el token
     res.cookie('token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 1000 * 60 * 60 * 2
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: 'lax',
+  maxAge: 1000 * 60 * 60 * 2,
+  path: '/' // disponible en toda la app
     });
 
     return res.status(200).json({
