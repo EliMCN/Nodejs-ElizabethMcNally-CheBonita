@@ -48,7 +48,11 @@ export async function getAllUsersService(role) {
   if (role) query = query.where('role', '==', role);
 
   const snapshot = await query.get();
-  return snapshot.docs.map(doc => doc.data());
+    return snapshot.docs.map(doc => {
+    // Excluimos el passwordHash por seguridad y añadimos el ID del documento.
+    const { passwordHash, ...user } = doc.data();
+    return { id: doc.id, ...user };
+  });
 }
 
 /**

@@ -44,13 +44,16 @@ productForm.addEventListener('submit', handleFormSubmit);
 tableBody.addEventListener('click', (e) => {
   const target = e.target.closest('button');
   if (!target) return;
-
+  
   const productId = target.dataset.id;
+  // Buscamos el producto una sola vez aquí
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
 
   if (target.classList.contains('edit-btn')) {
-    handleEdit(productId);
+    handleEdit(product); // Pasamos el objeto completo
   } else if (target.classList.contains('delete-btn')) {
-    handleDelete(productId);
+    handleDelete(product.id); // Aquí solo necesitamos el ID
   }
 });
 
@@ -106,7 +109,7 @@ function renderProducts(products) {
       <td>${Array.isArray(product.category) ? product.category.join(', ') : product.category}</td>
       <td>$${product.price.toFixed(2)}</td>
       <td>${product.stock}</td>
-      <td>
+      <td class="actions-cell">
         <button class="btn btn-sm btn-outline-secondary edit-btn" data-id="${product.id}">Editar</button>
         <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${product.id}">Eliminar</button>
       </td>
@@ -165,35 +168,26 @@ async function handleFormSubmit(e) {
   }
 }
 
-async function handleEdit(id) {
-  try {
-    const res = await fetch(`/api/products/${id}`); // Leer datos del endpoint público
-    if (!res.ok) throw new Error('Producto no encontrado');
-    const product = await res.json();
+function handleEdit(product) {
+  // Ya no es necesario hacer un fetch, usamos el objeto que ya tenemos. ¡Más rápido!
+  // Poblar el formulario
+  document.getElementById('productId').value = product.id;
+  document.getElementById('title').value = product.title;
+  document.getElementById('price').value = product.price;
+  document.getElementById('description').value = product.description || '';
+  document.getElementById('category').value = Array.isArray(product.category) ? product.category.join(', ') : product.category;
+  document.getElementById('stock').value = product.stock;
+  document.getElementById('brand').value = product.brand || '';
+  document.getElementById('image').value = product.image || '';
+  // Convertir el array de imágenes en un string con saltos de línea para el textarea
+  document.getElementById('images').value = (product.images || []).join('\n');
+  document.getElementById('discountPercentage').value = product.discountPercentage || 0;
+  document.getElementById('rating').value = product.rating || 0;
+  document.getElementById('specialEdition').checked = product.specialEdition || false;
+  document.getElementById('isGiftCard').checked = product.isGiftCard || false;
 
-    // Poblar el formulario
-    document.getElementById('productId').value = product.id;
-    document.getElementById('title').value = product.title;
-    document.getElementById('price').value = product.price;
-    document.getElementById('description').value = product.description || '';
-    document.getElementById('category').value = Array.isArray(product.category) ? product.category.join(', ') : product.category;
-    document.getElementById('stock').value = product.stock;
-    document.getElementById('brand').value = product.brand || '';
-    document.getElementById('image').value = product.image || '';
-    // Convertir el array de imágenes en un string con saltos de línea para el textarea
-    document.getElementById('images').value = (product.images || []).join('\n');
-    document.getElementById('discountPercentage').value = product.discountPercentage || 0;
-    document.getElementById('rating').value = product.rating || 0;
-    document.getElementById('specialEdition').checked = product.specialEdition || false;
-    document.getElementById('isGiftCard').checked = product.isGiftCard || false; 
-    
-
-    modalTitle.textContent = 'Editar Producto';
-    productModal.show();
-  } catch (err) {
-    console.error(err);
-    toastError(err.message);
-  }
+  modalTitle.textContent = 'Editar Producto';
+  productModal.show();
 }
 
 async function handleDelete(id) {

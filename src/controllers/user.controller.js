@@ -23,14 +23,17 @@ export const updateProfile = async (req, res) => {
   if (!name) return res.status(400).json({ error: 'El nombre es obligatorio' });
 
   try {
-    const user = await getUserById(uid);
-    if (!user) return res.status(404).json({ error: 'Usuario no encontrado' });
-
-    const updated = {           
-    name: name || user.name,       
-    address: address && address.street ? address : user.address
-    };
-    await updateUser(uid, updated);
+   // Construimos el objeto de actualización solo con los campos que se proporcionan.
+    const dataToUpdate = {};
+    if (name) {
+      dataToUpdate.name = name;
+    }
+    // Solo actualizamos la dirección si se proporciona un objeto de dirección válido.
+    if (address && typeof address === 'object') {
+      dataToUpdate.address = address;
+    }
+    
+    await updateUser(uid, dataToUpdate);
     return res.json({ message: 'Perfil actualizado correctamente' });    
   } catch (error) {
     console.error('Error al actualizar el perfil:', error);

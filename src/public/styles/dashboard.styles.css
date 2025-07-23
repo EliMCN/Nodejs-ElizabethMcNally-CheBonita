@@ -84,3 +84,17 @@ canvas {
   max-width: 100%;
   margin-top: 20px;
 }
+
+
+/* Estilos para unificar botones de acción en tablas de admin */
+.actions-cell {  
+  white-space: nowrap;
+  width: 1%; 
+  
+}
+
+.actions-cell .btn {  
+  min-width: 95px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

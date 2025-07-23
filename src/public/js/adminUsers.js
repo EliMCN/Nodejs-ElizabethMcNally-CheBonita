@@ -23,21 +23,24 @@ roleFilter.addEventListener('change', () => {
 
 // Event Delegation para los botones de acción
 tableBody.addEventListener('click', (e) => {
-  const target = e.target.closest('button'); // Asegurarse de obtener el botón
+  const target = e.target.closest('button');
   if (!target) return;
 
   const userId = target.dataset.id;
+  // Buscamos el usuario una sola vez aquí
+  const user = allUsers.find(u => u.id === userId);
+  if (!user) return;
 
   if (target.classList.contains('view-user-btn')) {
-    showUserModal(userId);
+    showUserModal(user); // Pasamos el objeto completo
   }
 
   if (target.classList.contains('edit-user-btn')) {
-    showEditModal(userId);
+    showEditModal(user); // Pasamos el objeto completo
   }
 
   if (target.classList.contains('deactivate-user-btn')) {
-    deactivateUser(userId);
+    deactivateUser(user.id); // Aquí solo necesitamos el ID
   }
 });
 
@@ -49,6 +52,13 @@ createUserForm?.addEventListener('submit', async (e) => {
   const email = document.getElementById('newUserEmail').value;
   const password = document.getElementById('newUserPassword').value;
   const role = document.getElementById('newUserRole').value;
+  
+  // Recolectar los datos de la dirección
+  const address = {
+    street: document.getElementById('newUserStreet').value,
+    city: document.getElementById('newUserCity').value,
+    postalCode: document.getElementById('newUserPostalCode').value
+  };
 
   try {
     // Reutilizamos el endpoint de registro, que ya maneja la creación de usuarios
@@ -56,7 +66,7 @@ createUserForm?.addEventListener('submit', async (e) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
-      body: JSON.stringify({ name, email, password, role, address: {} }) // Enviamos dirección vacía
+      body: JSON.stringify({ name, email, password, role, address })
     });
 
     const data = await res.json();
@@ -82,15 +92,22 @@ editUserForm?.addEventListener('submit', async (e) => {
   const id = document.getElementById('editUserId').value;
   const name = document.getElementById('editUserName').value;
   const email = document.getElementById('editUserEmail').value;
-  const role = document.getElementById('editUserRole').value;
   const active = document.getElementById('editUserActive').checked;
+
+  // Recolectamos los datos de la dirección
+  const address = {
+    street: document.getElementById('editUserStreet').value,
+    city: document.getElementById('editUserCity').value,
+    postalCode: document.getElementById('editUserPostalCode').value
+  };
 
   try {
     const res = await fetch(`/api/admin/users/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
-      body: JSON.stringify({ name, email, role, active })
+      // Enviamos el objeto de datos actualizado, sin el rol y con la dirección
+      body: JSON.stringify({ name, email, active, address })
     });
 
     if (!res.ok) {
@@ -142,7 +159,7 @@ function renderUsers(role = '') {
       <td>${user.email}</td>
       <td>${user.role}</td>
       <td>${user.active ? 'Sí' : 'No'}</td>
-      <td>
+      <td class="actions-cell">
         <button class="btn btn-sm btn-outline-info me-2 view-user-btn" data-id="${user.id}">Ver</button>
         <button class="btn btn-sm btn-outline-secondary me-2 edit-user-btn" data-id="${user.id}">Editar</button>
         ${user.role !== 'admin' && user.active ? `<button class="btn btn-sm btn-outline-danger deactivate-user-btn" data-id="${user.id}">Desactivar</button>` : ''}
@@ -153,30 +170,36 @@ function renderUsers(role = '') {
 }
 
 
-function showUserModal(id) {
-  const user = allUsers.find(u => u.id === id);
-  if (!user) return;
-
+function showUserModal(user) {
+  // Ya no es necesario buscar el usuario, lo recibimos directamente
   document.getElementById('modalName').textContent = user.name;
   document.getElementById('modalEmail').textContent = user.email;
   document.getElementById('modalRole').textContent = user.role;
-  const address = user.address ? `${user.address.street}, ${user.address.city}, ${user.address.zip}` : 'No especificada';
+
+  // Construimos la dirección de forma segura, mostrando solo las partes que existen.
+  let addressString = 'No especificada';
+  if (user.address) {
+    const parts = [user.address.street, user.address.city, user.address.postalCode];
+    // Filtramos las partes vacías y las unimos con comas.
+    addressString = parts.filter(p => p).join(', ') || 'No especificada';
+  }
+  const address = addressString;
   document.getElementById('modalAddress').textContent = address;
 
   const modal = new bootstrap.Modal(document.getElementById('userModal'));
   modal.show();
 }
 
-function showEditModal(id) {
-  const user = allUsers.find(u => u.id === id);
-  if (!user) return;
-
-  // Poblar el formulario de edición
+function showEditModal(user) {
+  // Ya no es necesario buscar el usuario, lo recibimos directamente
   document.getElementById('editUserId').value = user.id;
   document.getElementById('editUserName').value = user.name;
   document.getElementById('editUserEmail').value = user.email;
-  document.getElementById('editUserRole').value = user.role;
   document.getElementById('editUserActive').checked = user.active;
+  // Rellenamos los campos de dirección, usando valores vacíos si no existen.
+  document.getElementById('editUserStreet').value = user.address?.street || '';
+  document.getElementById('editUserCity').value = user.address?.city || '';
+  document.getElementById('editUserPostalCode').value = user.address?.postalCode || '';
 
   // Mostrar el modal de edición
   const editModal = new bootstrap.Modal(editUserModalEl);

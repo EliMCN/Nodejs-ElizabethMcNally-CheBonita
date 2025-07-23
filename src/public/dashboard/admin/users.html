@@ -85,12 +85,12 @@
               <label for="editUserEmail" class="form-label">Correo Electrónico</label>
               <input type="email" class="form-control" id="editUserEmail" required>
             </div>
+            <!-- El campo de Rol se elimina para impedir su modificación, como definimos en el backend -->
             <div class="mb-3">
-              <label for="editUserRole" class="form-label">Rol</label>
-              <select class="form-select" id="editUserRole" required>
-                <option value="cliente">Cliente</option>
-                <option value="admin">Administrador</option>
-              </select>
+              <label class="form-label">Dirección</label>
+              <input type="text" class="form-control mb-2" id="editUserStreet" placeholder="Calle y número">
+              <input type="text" class="form-control mb-2" id="editUserCity" placeholder="Ciudad">
+              <input type="text" class="form-control" id="editUserPostalCode" placeholder="Código Postal">
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="editUserActive">
@@ -134,6 +134,12 @@
                 <option value="cliente" selected>Cliente</option>
                 <option value="admin">Administrador</option>
               </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Dirección (Opcional)</label>
+              <input type="text" class="form-control mb-2" id="newUserStreet" placeholder="Calle y número">
+              <input type="text" class="form-control mb-2" id="newUserCity" placeholder="Ciudad">
+              <input type="text" class="form-control" id="newUserPostalCode" placeholder="Código Postal">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
