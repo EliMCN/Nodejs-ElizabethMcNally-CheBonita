@@ -16,19 +16,24 @@ Este sistema se encuentra en desarrollo activo, con el objetivo de convertirse e
 
 ---
 
-## Características Principales
-Para Clientes:
-Catálogo de Productos Dinámico: Productos cargados desde la base de datos con paginación "Cargar más".
-Búsqueda y Filtrado: Búsqueda por texto y filtrado por categorías.
-Detalle de Producto: Vistas detalladas con múltiples imágenes (thumbnails).
-Carrito de Compras Persistente: Utiliza Local Storage para guardar el carrito entre sesiones.
-Autenticación de Usuarios: Registro e inicio de sesión con validación.
-Recuperación de Contraseña: Sistema de reseteo de contraseña vía email (utilizando Nodemailer y Ethereal para pruebas).
-Perfil de Usuario: Los usuarios pueden ver y actualizar sus datos personales.
-Para Administradores:
-Panel de Administración: Dashboard con estadísticas clave (ventas, usuarios, stock bajo).
-Gestión de Productos (CRUD): Crear, leer, actualizar y eliminar productos a través de una interfaz gráfica.
-Gestión de Usuarios (CRUD): Crear, leer, actualizar y desactivar usuarios.
+##  Características principales
+
+### Para clientes
+
+- **Catálogo dinámico**: productos cargados desde Firestore con paginación tipo “Cargar más”.
+- **Búsqueda y filtrado**: por texto y por categorías.
+- **Detalle de producto**: vistas individuales con múltiples imágenes (thumbnails).
+- **Carrito persistente**: se guarda en `localStorage`.
+- **Autenticación**: registro e inicio de sesión con validación.
+- **Recuperación de contraseña**: vía email con Nodemailer + Ethereal.
+- **Perfil de usuario**: ver y editar información personal.
+
+### Para administradores
+
+- **Dashboard** con estadísticas clave (ventas, usuarios activos, stock bajo).
+- **Gestión de productos (CRUD)**: interfaz completa para agregar, editar y eliminar productos.
+- **Gestión de usuarios (CRUD)**: visualizar, editar o desactivar usuarios.
+
 
 ##  Arquitectura del Proyecto
 El proyecto está construido con una arquitectura desacoplada que separa claramente las responsabilidades del frontend y el backend.
